@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>{{ title }}</title>
+
+		<meta name="description" content="{{ description }}">
+		<meta name="keywords" content="{{ keyWords }}">
+		<meta name="author" content="Union Academy">
+
+		<link rel="shortcut icon" href="/public/img/favicon.png">
+
+		<link rel="stylesheet" href="/public/css/style.css">
+	</head>
+	<body>
+		<button id="header-toggle" class="header-toggle headroom">
+			<img src="/public/img/menu-icon.svg" alt="Abrir menu">
+			<span class="invisible-text">Abrir menu</span>
+		</button>
+
+		<header id="header" class="header flex flex-column space-around" role="banner">
+			<button class="close-button transparent">
+				<img src="/public/img/close-icon.svg" alt="Fechar menu">
+				<span class="invisible-text">Fechar menu</span>
+			</button>
+
+			<h1 class="logo">
+				<img src="/public/img/we-love-dev-logo.svg" alt="We Love Dev logo">
+				<span class="invisible-text">We Love Dev Blog</span>
+			</h1>
+
+			<div>
+				<nav role="navigation">
+					<ul class="categories-list" role="menubar">
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Back-end</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Front-end</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Arquitetura</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Metodologia</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Mobile</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Tutoriais</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+				<form class="input-collapse" role="search">
+					<input type="search" class="input" placeholder="Buscar:" required>
+					<button class="button with-icon transparent">
+						<span class="invisible-text">Pesquisar</span>
+						<img src="/public/img/search.svg" alt="Ícone de pesquisa">
+					</button>
+				</form>
+			</div>
+
+			<div>
+				<a class="link-icon icon" href="#">
+					<img src="/public/img/facebook.svg" alt="Ícone do Facebook">
+					<span class="invisible-text">Nossa página no Facebook</span>
+				</a>
+
+				<a class="link-icon icon" href="#">
+					<img src="/public/img/github.svg" alt="Ícone do Github">
+					<span class="invisible-text">Nosso repositório no Github</span>
+				</a>
+			</div>
+		</header>
+		
+		
+		{{{ body }}}
+
+
+		<script src="/public/js/main.js"></script>
+		<script src="/public/js/headroom.js"></script>
+		<script>
+			var myElement = document.querySelector(".headroom");
+			var headroom  = new Headroom(myElement);
+
+			headroom.init();
+		</script>
+	</body>
+</html>
