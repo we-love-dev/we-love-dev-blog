@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>We Love Dev Blog</title>
+
+		<meta name="description" content=" ... ">
+		<meta name="keywords" content="blog, web, front-end, back-end, developer, html, html5,
+			css, css3, javascript, nodejs, nosql, java, sql, web design, ux, ui, tutorial">
+		<meta name="author" content="Union Academy">
+
+		<link rel="shortcut icon" href="/img/favicon.png">
+	</head>
+
+	<body>
+		<button id="header-toggle" class="header-toggle headroom">
+			<img src="/img/menu-icon.svg" alt="Abrir menu">
+			<span class="invisible-text">Abrir menu</span>
+		</button>
+
+		<header id="header" class="header flex flex-column space-around" role="banner">
+			<button class="close-button transparent">
+				<img src="/img/close-icon.svg" alt="Fechar menu">
+				<span class="invisible-text">Fechar menu</span>
+			</button>
+
+			<h1 class="logo">
+				<img src="/img/we-love-dev-logo.svg" alt="We Love Dev logo">
+				<span class="invisible-text">We Love Dev Blog</span>
+			</h1>
+
+			<div>
+				<nav role="navigation">
+					<ul class="categories-list" role="menubar">
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Back-end</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Front-end</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Arquitetura</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Metodologia</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Mobile</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Tutoriais</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+				<form class="input-collapse" role="search">
+					<input type="search" class="input" placeholder="Buscar:" required>
+					<button class="button with-icon transparent">
+						<span class="invisible-text">Pesquisar</span>
+						<img src="/img/search.svg" alt="Ícone de pesquisa">
+					</button>
+				</form>
+			</div>
+
+			<div>
+				<a class="link-icon icon" href="#">
+					<img src="/img/facebook.svg" alt="Ícone do Facebook">
+					<span class="invisible-text">Nossa página no Facebook</span>
+				</a>
+
+				<a class="link-icon icon" href="#">
+					<img src="/img/github.svg" alt="Ícone do Github">
+					<span class="invisible-text">Nosso repositório no Github</span>
+				</a>
+			</div>
+		</header>
+
+		<main class="main" role="main">
+			<section class="grid">
+				<article class="grid-item flex flex-column justify-content-center"
+					role="article"
+					itemscope itemtype="http://schema.org/BlogPosting">
+
+					<figure class="post-cover overlay brown-overlay">
+						<img src="/img/articles/article-1.jpg" alt=" ..."
+							itemprop="thumbnailUrl">
+					</figure>
+
+					<header>
+						<a href="#" class="post-category" rel="tag"
+							itemprop="about">
+							<span class="inner">Development</span>
+						</a>
+
+						<a href="#" class="post-category" rel="tag"
+							itemprop="about">
+							<span class="inner">Front-end</span>
+						</a>
+
+						<h2 class="post-title" itemprop="headline">
+							<a class="text-white" href="post.html" itemprop="url">
+								Esboçando ideias <br>
+								<span class="post-subtitle">do papel ao Desenvolvimento</span>
+							</a>
+						</h2>
+
+						<span class="invisible-text" itemprop="publisher">We Love Dev</span>
+
+						<time class="post-date text-white" pubdate date="2015-08-15"
+							itemprop="datePublished">
+							15 de agosto de 2015
+						</time>
+					</header>
+
+					<footer class="flex justify-content-center">
+						<a class="author flex justify-content-center align-items-center"
+							href="#"
+							rel="author"
+							itemprop="author">
+							<img class="author-avatar" src="/img/authors/1.png" alt="author01">
+							<span class="author-name text-white">Eric dos Reis</span>
+						</a>
+					</footer>
+				</article>
+
+				<article class="grid-item flex flex-column justify-content-center"
+					role="article"
+					itemscope itemtype="http://schema.org/BlogPosting">
+
+					<figure class="post-cover overlay red-overlay">
+						<img src="/img/articles/article-2.jpg" alt=" ..."
+							itemprop="thumbnailUrl">
+					</figure>
+
+					<header>
+						<a href="#" class="post-category" rel="tag"
+							itemprop="about">
+							<span class="inner">Development</span>
+						</a>
+
+						<h2 class="post-title"
+							itemprop="headline">
+							<a class="text-white" href="#" itemprop="url">
+								Todos os caminhos <br>
+								<span class="post-subtitle">levam a Web</span>
+							</a>
+						</h2>
+
+						<span class="invisible-text" itemprop="publisher">We Love Dev</span>
+
+						<time class="post-date text-white" pubdate date="2015-07-10"
+							itemprop="datePublished">
+							10 de julho de 2015
+						</time>
+					</header>
+
+					<footer class="flex justify-content-center">
+						<a class="author flex justify-content-center align-items-center"
+							href="#"
+							rel="author"
+							itemprop="author">
+							<img class="author-avatar" src="/img/authors/2.png" alt="author02">
+							<span class="author-name text-white">Venilton Junior</span>
+						</a>
+					</footer>
+				</article>
+
+				<article class="grid-item flex flex-column justify-content-center"
+					role="article"
+					itemscope itemtype="http://schema.org/BlogPosting">
+
+						<figure class="post-cover overlay blue-gray-overlay">
+							<img src="/img/articles/article-3.jpg" alt=" ..."
+								itemprop="thumbnailUrl">
+						</figure>
+
+						<header>
+							<a href="#" class="post-category" rel="tag"
+								itemprop="about">
+								<span class="inner">Development</span>
+							</a>
+
+							<h2 class="post-title" itemprop="headline">
+								<a class="text-white" href="#" itemprop="url">
+									Sublime Text 3, <br>
+									<span class="post-subtitle">o que há de novo?</span>
+								</a>
+							</h2>
+
+							<span class="invisible-text" itemprop="publisher">We Love Dev</span>
+
+							<time class="post-date text-white" pubdate date="2015-07-05"
+								itemprop="datePublished">
+								05 de julho de 2015
+							</time>
+						</header>
+
+						<footer class="flex justify-content-center">
+							<a class="author flex justify-content-center align-items-center"
+								href="#"
+								rel="author"
+								itemprop="author">
+								<img class="author-avatar" src="/img/authors/3.png" alt="author03">
+								<span class="author-name text-white">João Zenaro</span>
+							</a>
+						</footer>
+				</article>
+
+				<article class="grid-item flex flex-column justify-content-center"
+					role="article"
+					itemscope itemtype="http://schema.org/BlogPosting">
+
+					<figure class="post-cover overlay gray-overlay">
+						<img src="/img/articles/article-4.jpg" alt=" ..."
+							itemprop="thumbnailUrl">
+					</figure>
+
+					<header>
+						<a href="#" class="post-category" rel="tag"
+							itemprop="about">
+							<span class="inner">Development</span>
+						</a>
+
+						<h2 class="post-title" itemprop="headline">
+							<a class="text-white" href="#" itemprop="url">
+								As dificuldades na gestão <br>
+								<span class="post-subtitle">de um grande projeto</span>
+							</a>
+						</h2>
+
+						<span class="invisible-text" itemprop="publisher">We Love Dev</span>
+
+						<time class="post-date text-white" pubdate date="2015-07-01"
+							itemprop="datePublished">
+							01 de julho de 2015
+						</time>
+					</header>
+
+					<footer class="flex justify-content-center">
+						<a class="author flex justify-content-center align-items-center"
+							href="#"
+							rel="author"
+							itemprop="author">
+							<img class="author-avatar" src="/img/authors/4.png" alt="author04">
+
+							<span class="author-name text-white">Renan JP</span>
+						</a>
+					</footer>
+				</article>
+
+				<article class="grid-item flex flex-column justify-content-center"
+					role="article"
+					itemscope itemtype="http://schema.org/BlogPosting">
+
+					<figure class="post-cover overlay brown-overlay">
+						<img src="/img/articles/article-1.jpg" alt=" ..."
+							itemprop="thumbnailUrl">
+					</figure>
+
+					<header>
+						<a href="#" class="post-category" rel="tag"
+							itemprop="about">
+							<span class="inner">Front-end</span>
+						</a>
+
+						<h2 class="post-title" itemprop="headline">
+							<a class="text-white" href="#" itemprop="url">
+								What Happens <br>
+								<span class="post-subtitle">in the Brain?</span>
+							</a>
+						</h2>
+
+						<span class="invisible-text" itemprop="publisher">We Love Dev</span>
+
+						<time class="post-date text-white" pubdate date="2015-06-23"
+							itemprop="datePublished">
+							23 de junho de 2015
+						</time>
+					</header>
+
+					<footer class="flex justify-content-center">
+						<a class="author flex justify-content-center align-items-center"
+							href="#"
+							rel="author"
+							itemprop="author">
+							<img class="author-avatar" src="/img/authors/5.png" alt="author05">
+
+							<span class="author-name text-white">Venilton Jr</span>
+						</a>
+					</footer>
+				</article>
+
+				<article class="grid-item flex flex-column justify-content-center"
+					role="article"
+					itemscope itemtype="http://schema.org/BlogPosting">
+
+					<figure class="post-cover overlay red-overlay">
+						<img src="/img/articles/article-2.jpg" alt=" ..."
+							itemprop="thumbnailUrl">
+					</figure>
+
+					<header>
+						<a href="#" class="post-category" rel="tag"
+							itemprop="about">
+							<span class="inner">Back-end</span>
+						</a>
+
+						<h2 class="post-title" itemprop="headline">
+							<a class="text-white" href="#" itemprop="url">
+								Do as I say, <br>
+								<span class="post-subtitle">not as I do.</span>
+							</a>
+						</h2>
+
+						<span class="invisible-text" itemprop="publisher">We Love Dev</span>
+
+						<time class="post-date text-white" pubdate date="2015-06-18"
+							itemprop="datePublished">
+							18 de junho de 2015
+						</time>
+					</header>
+
+					<footer class="flex justify-content-center">
+						<a class="author flex justify-content-center align-items-center"
+							href="#"
+							rel="author"
+							itemprop="author">
+							<img class="author-avatar" src="/img/authors/6.png" alt="author06">
+
+							<span class="author-name text-white">Eric dos Reis</span>
+						</a>
+					</footer>
+				</article>
+			</section>
+		</main>
+
+		<link rel="stylesheet" href="/css/style.css">
+
+		<script src="/js/main.js"></script>
+		<script src="/js/headroom.js"></script>
+		<script>
+			var myElement = document.querySelector(".headroom");
+			var headroom  = new Headroom(myElement);
+
+			headroom.init();
+		</script>
+	</body>
+</html>
