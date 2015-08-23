@@ -15,24 +15,25 @@
 		<link rel="shortcut icon" href="/img/favicon.png">
 
 		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/prism.css">
+		<link rel="stylesheet" href="/css/sh-core.css">
 	</head>
 
 	<body>
 		<button id="header-toggle" class="header-toggle headroom">
 			<img src="/img/menu-icon.svg" alt="Abrir menu">
-			<span class="invisible-text">Abrir menu</span>
+			<span class="text-invisible">Abrir menu</span>
 		</button>
 
-		<header id="header" class="header always-closed" role="banner">
+		<header id="header" class="header always-closed header flex flex-column space-around"
+			role="banner">
 			<button class="close-button transparent show">
 				<img src="/img/close-icon.svg" alt="Fechar menu">
-				<span class="invisible-text">Fechar menu</span>
+				<span class="text-invisible">Fechar menu</span>
 			</button>
 
 			<a href="/" class="logo">
 				<img src="/img/we-love-dev-logo.svg" alt="We Love Dev logo">
-				<span class="invisible-text">We Love Dev Blog</span>
+				<span class="text-invisible">We Love Dev Blog</span>
 			</a>
 
 			<div>
@@ -74,7 +75,7 @@
 				<form class="input-collapse" role="search">
 					<input type="text" class="input" placeholder="Buscar:" required>
 					<button class="button with-icon transparent">
-						<span class="invisible-text">Pesquisar</span>
+						<span class="text-invisible">Pesquisar</span>
 						<img src="/img/search.svg" alt="Ícone de pesquisa">
 					</button>
 				</form>
@@ -83,21 +84,23 @@
 			<div>
 				<a class="icon" href="#">
 					<img src="/img/facebook.svg" alt="Ícone do Facebook">
-					<span class="invisible-text">Nossa página no Facebook</span>
+					<span class="text-invisible">Nossa página no Facebook</span>
 				</a>
 
 				<a class="icon" href="#">
 					<img src="/img/github.svg" alt="Ícone do Github">
-					<span class="invisible-text">Nosso repositório no Github</span>
+					<span class="text-invisible">Nosso repositório no Github</span>
 				</a>
 			</div>
 		</header>
 
 		<main class="main" role="main">
 			<article role="article">
-				<header class="header-post flex align-items-center brown-overlay" role="heading">
-					<img class="header-post-img rounded-right"
-						src="/img/articles/article-2-cover.jpg" alt=" ...">
+				<header class="box width-100 flex flex-column justify-content-center"
+					role="heading">
+					<figure class="post-cover overlay brown-overlay">
+						<img src="/img/articles/article-2-cover.jpg" alt=" ...">
+					</figure>
 
 					<div class="header-post-inner">
 						<a href="#" class="post-category" rel="tag"
@@ -120,24 +123,21 @@
 							15 de agosto de 2015
 						</time>
 
-						<p class="text-white">
-							With the new MacBook, we set out to do the impossible: engineer a full-size experience into the lightest and most compact Mac notebook ever. That meant reimagining every element to make it not only lighter and thinner but also better. The result is more than just a new notebook. It's the future of the notebook.
-						</p>
+						<span class="text-invisible" itemprop="publisher">We Love Dev</span>
 
-						<span class="invisible-text" itemprop="publisher">We Love Dev</span>
-
-						<a class="author flex align-items-center"
+						<a class="author flex justify-content-center align-items-center"
 							href="#"
 							rel="author"
 							itemprop="author">
-							<img class="author-avatar" src="/img/authors/1.png" alt="author01">
+							<img class="author-avatar" src="/img/authors/1.png"
+								alt="author01">
 							<span class="author-name text-white">Eric dos Reis</span>
 						</a>
 					</div>
 				</header>
 
-				<section class="post-content">
-					<h2 class="with-separator light-separator">
+				<section class="wrapper-content">
+					<h2>
 						Problema
 					</h2>
 
@@ -151,7 +151,7 @@
 						<cite>Ben Shneiderman</cite>
 					</blockquote>
 
-					<h2 class="with-separator light-separator">
+					<h2>
 						Solução
 					</h2>
 
@@ -171,7 +171,7 @@
 						</dd>
 					</dl>
 
-					<h3 class="with-separator light-separator">
+					<h3>
 						Passos
 					</h3>
 
@@ -200,11 +200,11 @@
 						Pra lá , depois divoltis eitis, <code>public class PhysicPersonBuilder</code>. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
 					</p>
 
-					<h3 class="with-separator light-separator">
+					<h3>
 						Veja o exemplo
 					</h3>
 
-					<pre class="language-java line-numbers"><code>
+					<pre class="brush: java; highlight: [3, 61]">
 						public class PhysicPersonBuilder {
 
 							private PhysicPerson physicPerson;
@@ -237,42 +237,38 @@
 							public PhysicPerson create() {
 								return this.physicPerson;
 							}
-						}
-					</code></pre>
+						}</pre>
 
-					<h3 class="with-separator light-separator">
+					<h3>
 						JavaScript
 					</h3>
 
-					<pre class="language-javascript"><code>
+					<pre class="brush: js;">
 						function myFunction() {
 							alert("Hello World!");
-						}
-					</code></pre>
+						}</pre>
 
-					<h3 class="with-separator light-separator">
+					<h3>
 						SQL
 					</h3>
 
-					<pre class="language-sql"><code>
-						SELECT * FROM client WHERE active LIKE 'true';
-					</code></pre>
+					<pre class="brush: sql;">
+						SELECT * FROM client WHERE active LIKE 'true';</pre>
 
-					<h3 class="with-separator light-separator">
+					<h3>
 						XML
 					</h3>
 
-					<pre class="language-xml"><code>
-						&lt;?xml version="1.0"?&gt;
-						&lt;note>
-							&lt;to>Tove&lt;/to&gt;
-							&lt;from>Jani&lt;/from&gt;
-							&lt;heading>Reminder&lt;/heading&gt;
-							&lt;body>Don't forget me this weekend!&lt;/body&gt;
-						&lt;/note&gt;
-					</code></pre>
+					<pre class="brush: xml; highlight: 5">
+						<?xml version="1.0"?>
+						<note>
+							<to>Tove</to>
+							<from>Jani</from>
+							<heading>Reminder</heading>
+							<body>Don't forget me this weekend!</body>
+						</note></pre>
 
-					<h3 class="with-separator light-separator">
+					<h3>
 						Conclusão
 					</h3>
 
@@ -299,7 +295,7 @@
 						</li>
 					</ul>
 
-					<h3 class="with-separator light-separator">
+					<h3>
 						Extra: Vídeo tutorial
 					</h3>
 
@@ -318,7 +314,7 @@
 						<div class="previous-post-inner">
 							<span class="block uppercase text-bold">Anterior:</span>
 
-							<span class="orange-text">Dao Factory</span>
+							<span class="text-orange">Dao Factory</span>
 						</div>
 					</a>
 
@@ -326,50 +322,71 @@
 						<div class="next-post-inner">
 							<span class="block uppercase text-bold">Próximo:</span>
 
-							<span class="orange-text">Singleton Design Pattern</span>
+							<span class="text-orange">Singleton Design Pattern</span>
 						</div>
 					</a>
 				</nav>
 
-				<!-- <footer>
-					<a class="rounded" href="autor.html">
-						<img class="thumb left" src="http://placehold.it/110x110&text=[img]">
-					</a>
+				<footer class="wrapper-content">
+					<div class="flex justify-content-center">
+						<a class="author flex justify-content-center align-items-center"
+							href="#"
+							rel="author"
+							itemprop="author">
+							<img class="author-avatar big"
+								src="http://placehold.it/110x110&text=[img]"
+								alt="author01">
 
-					<h4>
-						<a rel="author" href="autor.html">Renan JP</a>
-					</h4>
+							<h4 class="author-name">Eric dos Reis</h4>
+						</a>
+					</div>
+
 					<p>
 						Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.
 					</p>
 
-					<p>
+					<p class="text-center">
 						<a href="autor.html">Veja todas as contribuições de Renan JP</a>.
 					</p>
 
-					<ul class="inline-list">
+					<ul class="inline-list flex justify-content-center">
 						<li>
 							<a href="#">
-								<span class="invisible-text">Facebook</span>
+								<img class="icon" src="/img/facebook.svg"
+									alt="Ícone do Facebook">
+								<span class="text-invisible">Facebook</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<span class="invisible-text">Google Plus</span>
+								<img class="icon" src="/img/facebook.svg"
+									alt="Ícone do Google Plus">
+								<span class="text-invisible">Google Plus</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<span class="invisible-text">twitter</span>
+								<img class="icon" src="/img/facebook.svg"
+									alt="Twitter">
+								<span class="text-invisible">Twitter</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<span class="invisible-text">LinkedIn</span>
+								<img class="icon" src="/img/facebook.svg"
+									alt="Ícone do Linkedin">
+								<span class="text-invisible">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icon" src="/img/github.svg"
+									alt="Ícone do Github">
+								<span class="text-invisible">LinkedIn</span>
 							</a>
 						</li>
 					</ul>
-				</footer> -->
+				</footer>
 			</article>
 		</main>
 
@@ -383,7 +400,13 @@
 		</script>
 
 		<!-- Syntax Highlighter -->
-		<script src="/js/pre-code.js"></script>
-		<script src="/js/prism.js"></script>
+		<script src="/js/sh/sh-core.js"></script>
+		<script src="/js/sh/sh-brush-java.js"></script>
+		<script src="/js/sh/sh-brush-javascript.js"></script>
+		<script src="/js/sh/sh-brush-sql.js"></script>
+		<script src="/js/sh/sh-brush-xml.js"></script>
+		<script>
+			SyntaxHighlighter.all();
+		</script>
 	</body>
 </html>
