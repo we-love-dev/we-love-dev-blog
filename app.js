@@ -13,7 +13,6 @@ app.use('/public', express.static('public'));
 app.engine('handlebars', exphbs({ defaultLayout: 'index' }));
 app.set('view engine', 'handlebars');
 
-
 /* MOCK */
 var posts = [];
 var post = {
@@ -31,6 +30,22 @@ posts.push(post);
 posts.push(post);
 posts.push(post);
 posts.push(post);
+
+
+var Author = require('./modules/author/model');
+
+var renan = {
+	name: 'Renan Johannsen de Paula',
+	picture: '/public/teste',
+	resume: 'Atualmente é analista de sistemas na Cast Informática S.A., onde desempenha o papel de especialista junto as plataforma Android e Java. Atuou em diversos projetos governamentais e privados com enfase no desenvolvimento colaborativo. Graduado em Ciência da Computação pela Universidade Paulista, almeja conquistar o título de Mestre com a intenção de aprimorar suas habilidades no âmbito acadêmico.',
+	socialMedias: [{media: 'FACEBOOK', src: 'https://www.facebook.com/RenanJPaula'}]
+};
+
+Author.findOne({_id: '55f22ba932e208861cbaef99'}, function(err, data) {
+	console.log(data.name);
+});
+
+/* END-MOCK */
 
 
 app.get("/", function(req, res) {
