@@ -4,10 +4,6 @@
 		headerCtrl      = document.getElementById('header-toggle'),
 		headerCloseCtrl = headerEl.querySelector('.close-button');
 
-	function init() {
-		menuToggle();
-	}
-
 	function menuToggle() {
 		headerCtrl.addEventListener('click', function() {
 			if (!headerEl.classList.contains('is-open'))
@@ -20,5 +16,5 @@
 		});
 	}
 
-	init();
+	menuToggle();
 })();

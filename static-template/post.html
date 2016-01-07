@@ -10,11 +10,13 @@
 		<meta name="description" content=" ... ">
 		<meta name="keywords" content="blog, web, front-end, back-end, developer, html, html5,
 			css, css3, javascript, nodejs, nosql, java, sql, web design, ux, ui, tutorial">
-		<meta name="author" content="Union Academy">
+
+		<meta name="author" content="Nome do Autor">
 
 		<link rel="shortcut icon" href="/img/favicon.png">
 
 		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/awesomplete.css">
 		<link rel="stylesheet" href="/css/sh-core.css">
 	</head>
 
@@ -24,14 +26,14 @@
 			<span class="text-invisible">Abrir menu</span>
 		</button>
 
-		<header id="header" class="header always-closed header flex flex-column space-around"
+		<header id="header" class="header always-closed flex flex-column space-around"
 			role="banner">
 			<button class="close-button transparent show">
 				<img src="/img/close-icon.svg" alt="Fechar menu">
 				<span class="text-invisible">Fechar menu</span>
 			</button>
 
-			<a href="/" class="logo">
+			<a href="index.html" class="logo align-self-center sm-60 md-100">
 				<img src="/img/we-love-dev-logo.svg" alt="We Love Dev logo">
 				<span class="text-invisible">We Love Dev Blog</span>
 			</a>
@@ -44,26 +46,31 @@
 								<span class="inner">Back-end</span>
 							</a>
 						</li>
+
 						<li>
 							<a href="#" class="post-category">
 								<span class="inner">Front-end</span>
 							</a>
 						</li>
+
 						<li>
 							<a href="#" class="post-category">
 								<span class="inner">Arquitetura</span>
 							</a>
 						</li>
+
 						<li>
 							<a href="#" class="post-category">
 								<span class="inner">Metodologia</span>
 							</a>
 						</li>
+
 						<li>
 							<a href="#" class="post-category">
 								<span class="inner">Mobile</span>
 							</a>
 						</li>
+
 						<li>
 							<a href="#" class="post-category">
 								<span class="inner">Tutoriais</span>
@@ -72,26 +79,30 @@
 					</ul>
 				</nav>
 
-				<form class="input-collapse" role="search">
-					<input type="text" class="input" placeholder="Buscar:" required>
-					<button class="button with-icon transparent">
+				<form class="flex flex-row justify-content-center" role="search">
+					<input id="search" type="search" class="awesomplete input-addon-field input-search text-white"
+						placeholder="Buscar" required>
+
+					<button class="button-search">
 						<span class="text-invisible">Pesquisar</span>
-						<img src="/img/search.svg" alt="Ícone de pesquisa">
+						<img src="/img/search-icon.svg" alt="Ícone de pesquisa">
 					</button>
 				</form>
 			</div>
 
 			<div>
-				<a class="icon" href="#">
-					<img src="/img/facebook.svg" alt="Ícone do Facebook">
+				<a class="link-icon icon" href="#">
+					<img src="/img/facebook-icon.svg" alt="Ícone do Facebook">
 					<span class="text-invisible">Nossa página no Facebook</span>
 				</a>
 
-				<a class="icon" href="#">
-					<img src="/img/github.svg" alt="Ícone do Github">
+				<a class="link-icon icon" href="#">
+					<img src="/img/github-icon.svg" alt="Ícone do Github">
 					<span class="text-invisible">Nosso repositório no Github</span>
 				</a>
 			</div>
+
+			<a class="about-link text-green text-bold" href="about.html">Sobre</a>
 		</header>
 
 		<main class="main" role="main">
@@ -113,7 +124,7 @@
 							<span class="inner">Front-end</span>
 						</a>
 
-						<h1 class="post-title text-white" itemprop="headline">
+						<h1 class="post-title text-white text-bigger" itemprop="headline">
 							Esboçando ideias <br>
 							<span class="post-subtitle">do papel ao Desenvolvimento</span>
 						</h1>
@@ -126,7 +137,7 @@
 						<span class="text-invisible" itemprop="publisher">We Love Dev</span>
 
 						<a class="author flex justify-content-center align-items-center"
-							href="#"
+							href="author.html"
 							rel="author"
 							itemprop="author">
 							<img class="author-avatar" src="/img/authors/1.png"
@@ -191,7 +202,7 @@
 						<img class="width-100" alt="This is an image" src="http://placehold.it/600x350&text=[img]">
 
 						<figcaption class="text-center">
-							<a href="#">Image crédits</a>
+							<a class="special-link" href="#">Image crédits</a>
 						</figcaption>
 					</figure>
 
@@ -327,62 +338,59 @@
 					</a>
 				</nav>
 
-				<footer class="wrapper-content">
+				<footer class="footer flex flex-column wrapper-content gray-light-bg">
 					<div class="flex justify-content-center">
 						<a class="author flex justify-content-center align-items-center"
-							href="#"
+							href="author.html"
 							rel="author"
 							itemprop="author">
 							<img class="author-avatar big"
 								src="http://placehold.it/110x110&text=[img]"
 								alt="author01">
 
-							<h4 class="author-name">Eric dos Reis</h4>
+							<h4 class="author-name text-dark">Eric dos Reis</h4>
 						</a>
 					</div>
 
-					<p>
+					<p class="text-center">
 						Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.
 					</p>
 
 					<p class="text-center">
-						<a href="autor.html">Veja todas as contribuições de Renan JP</a>.
+						<a class="special-link" href="author.html">
+							Veja todas as contribuições do autor.
+						</a>
 					</p>
 
 					<ul class="inline-list flex justify-content-center">
 						<li>
-							<a href="#">
-								<img class="icon" src="/img/facebook.svg"
-									alt="Ícone do Facebook">
+							<a class="link-icon icon" href="#">
+								<img src="/img/facebook-icon.svg" alt="Ícone do Facebook">
 								<span class="text-invisible">Facebook</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<img class="icon" src="/img/facebook.svg"
-									alt="Ícone do Google Plus">
+							<a class="link-icon icon" href="#">
+								<img src="/img/google-plus-icon.svg" alt="Ícone do Google Plus">
 								<span class="text-invisible">Google Plus</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<img class="icon" src="/img/facebook.svg"
-									alt="Twitter">
+							<a class="link-icon icon" href="#">
+								<img src="/img/twitter-icon.svg" alt="Ícone do Twitter">
 								<span class="text-invisible">Twitter</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<img class="icon" src="/img/facebook.svg"
-									alt="Ícone do Linkedin">
+							<a class="link-icon icon" href="#">
+								<img src="/img/linkedin-icon.svg" alt="Ícone do Linkedin">
 								<span class="text-invisible">LinkedIn</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<img class="icon" src="/img/github.svg"
-									alt="Ícone do Github">
-								<span class="text-invisible">LinkedIn</span>
+							<a class="link-icon icon" href="#">
+								<img src="/img/github-icon.svg" alt="Ícone do Github">
+								<span class="text-invisible">Github</span>
 							</a>
 						</li>
 					</ul>
@@ -390,11 +398,11 @@
 			</article>
 		</main>
 
-		<script src="/js/main.js"></script>
+		<script src="/js/menu.js"></script>
 		<script src="/js/headroom.js"></script>
 		<script>
-			var myElement = document.querySelector(".headroom");
-			var headroom  = new Headroom(myElement);
+			var el        = document.querySelector(".headroom");
+			var headroom  = new Headroom(el);
 
 			headroom.init();
 		</script>
@@ -407,6 +415,14 @@
 		<script src="/js/sh/sh-brush-xml.js"></script>
 		<script>
 			SyntaxHighlighter.all();
+		</script>
+
+		<script src="/js/awesomplete.js"></script>
+		<script>
+			var input        = document.getElementById("search");
+			var awesomplete  = new Awesomplete(input);
+
+			awesomplete.list = ["Java", "JavaScript", "Node.js"];
 		</script>
 	</body>
 </html>

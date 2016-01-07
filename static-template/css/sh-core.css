@@ -65,6 +65,7 @@
 .syntaxhighlighter table td.code .container textarea {
 	background: white !important;
 	border: none !important;
+	color: inherit;
 	overflow: hidden !important;
 	padding-left: 1em !important;
 	position: absolute !important;
