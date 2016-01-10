@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
-    "start": "nodemon bin/www"
+    "start": "DEBUG=we-love-dev-blog:* nodemon bin/www"
   },
   "repository": {
     "type": "git",
@@ -24,10 +24,11 @@
     "url": "https://github.com/RenanJPaula/we-love-dev/issues"
   },
   "dependencies": {
-    "body-parser": "^1.12.3",
-    "express": "^4.12.3",
+    "body-parser": "^1.14.2",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
-    "mongoose": "^4.0.2"
+    "mongoose": "^4.3.5"
   },
   "homepage": "https://github.com/RenanJPaula/we-love-dev"
 }
