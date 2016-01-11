@@ -1,0 +1,78 @@
+[hidden] {
+	display: none;
+}
+
+.visually-hidden {
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
+
+div.awesomplete {
+	display: inline-block;
+	position: relative;
+}
+
+div.awesomplete > input {
+	display: block;
+}
+
+div.awesomplete > ul {
+	background: #FFF;
+	border-radius: 0 0 4px 4px;
+	box-shadow: .05em .2em .6em rgba(0, 0, 0, .2);
+	list-style: none;
+	margin: 0;
+	min-width: 120%;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+
+div.awesomplete > ul[hidden],
+div.awesomplete > ul:empty {
+	display: none;
+}
+
+@supports (transform: scale(0)) {
+
+	div.awesomplete > ul {
+		transition: .3s cubic-bezier(.4, .2, .5, 1.4);
+	}
+
+	div.awesomplete > ul[hidden],
+	div.awesomplete > ul:empty {
+		display: block;
+		opacity: 0;
+		transform: scale(0);
+		transition-timing-function: ease;
+	}
+
+}
+
+	div.awesomplete > ul > li {
+		cursor: pointer;
+		font-size: .8125em;
+		padding: .75em;
+		position: relative;
+		text-align: left;
+	}
+
+		div.awesomplete > ul > li:last-child {
+			border-radius: 0 0 4px 4px;
+		}
+
+	div.awesomplete > ul > li:hover {
+		background: #B8D3E0;
+		color: inherit;
+	}
+
+	div.awesomplete > ul > li[aria-selected="true"] {
+		background: #3D6D8F;
+		color: #FFF;
+	}
+
+		div.awesomplete mark {
+			background: transparent;
+			font-weight: bold;
+		}

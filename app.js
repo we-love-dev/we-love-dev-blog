@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 // Config handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'index' }));
 app.set('view engine', 'handlebars');
+app.use('/public', express.static('public'));
 
 // Config routes
 routeManager.configPageRoutes(app);
