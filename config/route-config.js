@@ -1,10 +1,18 @@
 'use strict';
 
-var routeConfig = {}
-  , main = require('../routes/main-route');
+var config = {}
+  , path = require('path')
+  , fs = require('fs')
+  , env = require('../env');
 
-routeConfig.configPageRoutes = function (app) {
-  app.use('/', main);
-};
+config.configRoutes = function(app) {
+  var _routePath = path.join(__dirname, '../routes')
+    , _fileNames = fs.readdirSync(_routePath);
 
-module.exports = routeConfig;
+  _fileNames.forEach(function(fileName) {
+    var routeConfig = require(path.join(_routePath, fileName));
+    app.use(routeConfig);
+  });
+}
+
+module.exports = config;

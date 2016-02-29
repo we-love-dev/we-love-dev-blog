@@ -1,9 +1,11 @@
-var ctrl = {};
+'use strict';
 
-ctrl.renderMainPage = function(req, res) {
-  res.render('main', {
-    pageTitle: 'Baile de favela',
-    categories: ['Back-end', 'Front-end', 'Arquitetura', 'Metodologia', 'Mobile', 'Tutoriais']
+var Post = require('../models/post-model')
+  , ctrl = {};
+
+ctrl.renderMainPage = (req, res) => {
+  Post.findAll().then(posts => {
+    res.json(posts);
   });
 };
 

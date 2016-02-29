@@ -1,8 +1,8 @@
 'use strict';
 
 var app = require('../app')
-  , env = require('../config/env')
-  , debug = require('debug')(env.applicationName + ':http-server')
+  , env = require('../env')
+  , debug = require('../config/debug-config')('http:server')
   , http = require('http')
   , port = env.port;
 
@@ -22,11 +22,11 @@ function onError(error) {
 
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      debug(bind + ' requires elevated privileges');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      debug(bind + ' is already in use');
       process.exit(1);
       break;
     default:

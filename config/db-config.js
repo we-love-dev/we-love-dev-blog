@@ -1,8 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose')
-	, env = require('./env')
-  , debug = require('debug')(env.applicationName + ':db')
+	, env = require('../env')
+  , debug = require('./debug-config')('db')
   , dbConfig = env.db;
 
 // configure a mongoose connection

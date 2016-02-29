@@ -19,6 +19,6 @@ app.set('view engine', 'handlebars');
 app.use('/public', express.static('public'));
 
 // Config routes
-routeManager.configPageRoutes(app);
+routeManager.configRoutes(app);
 
 module.exports = app;
