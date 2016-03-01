@@ -8,7 +8,7 @@ var mongoose = require('mongoose')
     , title: { type: String, required: true }
     , subtitle: { type: String, default: null }
     , createdIn: { type: Date, required: true }
-    , author: { type: ObjectId, ref: 'Autor' required: true }
+    , author: { type: ObjectId, ref: 'Autor', required: true }
     , tags: { type: [ObjectId], default:[] }
     , src: { type: String, required: true }
     , active: { type: Boolean, default: true }
