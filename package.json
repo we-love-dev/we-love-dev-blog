@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
-    "start": "DEBUG=we-love-dev:* nodemon bin/www"
+    "start": "DEBUG=we-love-dev:* nodemon --debug bin/www"
   },
   "repository": {
     "type": "git",

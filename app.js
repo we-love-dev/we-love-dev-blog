@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Config handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'index' }));
+app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 app.use('/public', express.static('public'));
 
