@@ -10,18 +10,73 @@ var mongoose = require('mongoose')
     , createdIn: { type: Date, required: true }
     , author: { type: ObjectId, ref: 'Autor', required: true }
     , tags: { type: [ObjectId], default:[] }
-    , src: { type: String, required: true }
     , active: { type: Boolean, default: true }
-    , image: imageSchema
+    , image: { type: imageSchema, required: true }
     })
-  , Post = mongoose.model('Post', schema);
+  , Post = mongoose.model('Post', schema)
+  , Author = require('./author-model')
+  , Tag = require('./tag-model');
 
 module.exports.findAll = () => {
   return new Promise((resolve, reject) => {
     let _query = { active: true };
 
     Post.find(_query).lean().exec((err, posts) => {
-      resolve(posts);
+      if(err) {
+        reject(err)
+      } else {
+        let _promises = [];
+
+        for (var i = 0; i < posts.length; i++) {
+          _promises.push(loadData(posts[i]));
+        }
+
+        Promise.all(_promises)
+          .then(value => {
+            resolve(posts);
+          }).catch(err => {
+            reject(err);
+          });
+      }
     });
   });
 };
+
+function loadData(post) {
+  loadLongDate(post);
+  let _promises = [];
+  _promises.push(loadAutor(post));
+  _promises.push(loadTag(post));
+  return _promises;
+}
+
+function loadLongDate(post) {
+  post.longCreatedIn = post.createdIn.getDay()
+  + '/' + post.createdIn.getMonth() + '/' + post.createdIn.getYear();
+}
+
+function loadAutor(post) {
+  return new Promise((resolve, reject) => {
+    Author.findById(post.author)
+      .then(author => {
+        post.author = author;
+        resolve();
+      })
+      .catch(err => {
+        reject(err)
+      });
+  });
+}
+
+function loadTag(post) {
+  return new Promise((resolve, reject) => {
+    Tag.findByIds(post.tags)
+      .then(tags => {
+        post.tags = tags;
+        resolve();
+      })
+      .catch(err => {
+        reject(err)
+      });
+  });
+}

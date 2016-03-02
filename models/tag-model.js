@@ -14,3 +14,13 @@ module.exports.findAll = () => {
     });
   });
 };
+
+module.exports.findByIds = (tagIds) => {
+  return new Promise((resolve, reject) => {
+    let _query = { _id: { $in: tagIds } };
+
+    Tag.find(_query).lean().exec((err, tags) => {
+      resolve(tags);
+    });
+  });
+};
