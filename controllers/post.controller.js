@@ -4,18 +4,18 @@ var Post = require('../models/post-model')
   , Tag = require('../models/tag-model')
   , ctrl = {};
 
-ctrl.renderHomePage = (req, res) => {
-  let _promises = [Tag.findAll(), Post.findAll()];
+ctrl.renderPostPage = (req, res) => {
+  let _promises = [Tag.findAll(), Post.getPostByPath(req.params.path)];
   Promise.all(_promises).then((results) => {
     let _options = {
         layout: 'template'
-      , closeMenu: false
-      , hasCode: false
+      , closeMenu: true
+      , hasCode: true
       , title: 'teste'
       , tags: results[0]
-      , posts: results[1]
+      , post: results[1]
     };
-    res.render('posts', _options);
+    res.render('post', _options);
   });
 };
 

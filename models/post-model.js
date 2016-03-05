@@ -42,6 +42,25 @@ module.exports.findAll = () => {
   });
 };
 
+module.exports.getPostByPath = (path) => {
+  return new Promise((resolve, reject) => {
+    let _query = { active: true, path: path };
+
+    Post.findOne(_query).lean().exec((err, post) => {
+      if(err) {
+        reject(err)
+      } else {
+        Promise.all(loadData(post))
+          .then(value => {
+            resolve(post);
+          }).catch(err => {
+            reject(err);
+          });
+      }
+    });
+  });
+};
+
 function loadData(post) {
   loadLongDate(post);
   let _promises = [];

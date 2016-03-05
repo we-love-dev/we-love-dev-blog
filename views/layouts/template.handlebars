@@ -20,6 +20,9 @@
 
 		<link rel="stylesheet" href="/public/css/style.css">
 		<link rel="stylesheet" href="/public/css/awesomplete.css">
+		{{#if hasCode}}
+			<link rel="stylesheet" href="/public/css/sh-core.css">
+		{{/if}}
 	</head>
 
   <body>
@@ -28,8 +31,13 @@
       <span class="text-invisible">Abrir menu</span>
     </button>
 
-    <header id="header" class="header flex flex-column space-around" role="banner">
+		{{#if closeMenu}}
+			<header id="header" class="header always-closed flex flex-column space-around" role="banner">
+			<button class="close-button transparent show">
+		{{else}}
+			<header id="header" class="header flex flex-column space-around" role="banner">
 			<button class="close-button transparent">
+		{{/if}}
 				<img src="/public/img/close-icon.svg" alt="Fechar menu">
 				<span class="text-invisible">Fechar menu</span>
 			</button>
@@ -86,5 +94,18 @@
     <script src="/public/js/menu.js"></script>
     <script src="/public/js/headroom.js"></script>
     <script src="/public/js/awesomplete.js"></script>
+
+		{{#if hasCode}}
+			<script src="/public/js/sh/sh-core.js"></script>
+			<script src="/public/js/sh/sh-brush-java.js"></script>
+			<script src="/public/js/sh/sh-brush-javascript.js"></script>
+			<script src="/public/js/sh/sh-brush-sql.js"></script>
+			<script src="/public/js/sh/sh-brush-xml.js"></script>
+			<script>
+				SyntaxHighlighter.all();
+			</script>
+		{{/if}}
+
+		<script src="/public/js/main.js"></script>
   </body>
 </html>
