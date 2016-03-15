@@ -5,5 +5,6 @@ var express = require('express')
   , router = express.Router();
 
 router.get('/', ctrl.renderHomePage);
+router.get('/:tag', ctrl.renderHomePage);
 
 module.exports = router;

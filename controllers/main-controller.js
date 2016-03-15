@@ -5,7 +5,9 @@ var Post = require('../models/post-model')
   , ctrl = {};
 
 ctrl.renderHomePage = (req, res) => {
-  let _promises = [Tag.findAll(), Post.findAll()];
+  let _tag = req.params.tag
+    , _promises = [Tag.findAll(), Post.findAll(_tag)];
+
   Promise.all(_promises).then((results) => {
     let _options = {
         layout: 'template'
@@ -15,6 +17,7 @@ ctrl.renderHomePage = (req, res) => {
       , tags: results[0]
       , posts: results[1]
     };
+    
     res.render('posts', _options);
   });
 };

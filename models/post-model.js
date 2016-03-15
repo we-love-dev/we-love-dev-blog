@@ -8,8 +8,8 @@ var mongoose = require('mongoose')
     , title: { type: String, required: true }
     , subtitle: { type: String, default: null }
     , createdIn: { type: Date, required: true }
-    , author: { type: ObjectId, ref: 'Autor', required: true }
-    , tags: { type: [ObjectId], default:[] }
+    , author: { type: ObjectId, ref: 'Author', required: true }
+    , tags: { type: [{ type: ObjectId, ref: 'Tag' }], default:[]  }
     , active: { type: Boolean, default: true }
     , image: { type: imageSchema, required: true }
     })
@@ -21,22 +21,12 @@ module.exports.findAll = () => {
   return new Promise((resolve, reject) => {
     let _query = { active: true };
 
-    Post.find(_query).lean().exec((err, posts) => {
+    Post.find(_query).populate('author').populate('tags').lean().exec((err, posts) => {
       if(err) {
         reject(err)
       } else {
-        let _promises = [];
-
-        for (var i = 0; i < posts.length; i++) {
-          _promises.push(loadData(posts[i]));
-        }
-
-        Promise.all(_promises)
-          .then(value => {
-            resolve(posts);
-          }).catch(err => {
-            reject(err);
-          });
+        console.log(posts);
+        resolve(posts);
       }
     });
   });
@@ -46,56 +36,12 @@ module.exports.getPostByPath = (path) => {
   return new Promise((resolve, reject) => {
     let _query = { active: true, path: path };
 
-    Post.findOne(_query).lean().exec((err, post) => {
+    Post.findOne(_query).populate('author').populate('tags').lean().exec((err, post) => {
       if(err) {
         reject(err)
       } else {
-        Promise.all(loadData(post))
-          .then(value => {
-            resolve(post);
-          }).catch(err => {
-            reject(err);
-          });
+        resolve(post);
       }
     });
   });
 };
-
-function loadData(post) {
-  loadLongDate(post);
-  let _promises = [];
-  _promises.push(loadAutor(post));
-  _promises.push(loadTag(post));
-  return _promises;
-}
-
-function loadLongDate(post) {
-  post.longCreatedIn = post.createdIn.getDay()
-  + '/' + post.createdIn.getMonth() + '/' + post.createdIn.getYear();
-}
-
-function loadAutor(post) {
-  return new Promise((resolve, reject) => {
-    Author.findById(post.author)
-      .then(author => {
-        post.author = author;
-        resolve();
-      })
-      .catch(err => {
-        reject(err)
-      });
-  });
-}
-
-function loadTag(post) {
-  return new Promise((resolve, reject) => {
-    Tag.findByIds(post.tags)
-      .then(tags => {
-        post.tags = tags;
-        resolve();
-      })
-      .catch(err => {
-        reject(err)
-      });
-  });
-}
