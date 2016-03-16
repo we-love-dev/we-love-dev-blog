@@ -25,7 +25,6 @@ module.exports.findAll = () => {
       if(err) {
         reject(err)
       } else {
-        console.log(posts);
         resolve(posts);
       }
     });

@@ -8,6 +8,8 @@
       </figure>
 
       <header>
+        <span class="text-invisible" itemprop="publisher">We Love Dev</span>
+        
         {{#each tags}}
           <a href="/{{path}}" class="post-category" rel="tag" itemprop="about">
             <span class="inner">{{name}}</span>
@@ -25,8 +27,6 @@
             {{/if}}
           </a>
         </h2>
-
-        <span class="text-invisible" itemprop="publisher">We Love Dev</span>
 
         <time class="post-date text-white" pubdate date="{{createdIn}}" itemprop="datePublished">
           {{longCreatedIn}}

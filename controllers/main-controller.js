@@ -13,11 +13,10 @@ ctrl.renderHomePage = (req, res) => {
         layout: 'template'
       , closeMenu: false
       , hasCode: false
-      , title: 'teste'
       , tags: results[0]
       , posts: results[1]
     };
-    
+
     res.render('posts', _options);
   });
 };
