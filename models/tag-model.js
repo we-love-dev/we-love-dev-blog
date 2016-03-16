@@ -7,20 +7,29 @@ var mongoose = require('mongoose')
     })
   , Tag = mongoose.model('Tag', schema);
 
-module.exports.findAll = () => {
+module.exports.getAllTags = () => {
   return new Promise((resolve, reject) => {
     Tag.find({}).lean().exec((err, tags) => {
-      resolve(tags);
+      if(err) {
+        reject(err)
+      } else {
+        resolve(tags);
+      }
     });
   });
 };
 
-module.exports.findByIds = (tagIds) => {
+
+module.exports.getIdsByPaths = (paths) => {
   return new Promise((resolve, reject) => {
-    let _query = { _id: { $in: tagIds } };
+    let _query = { path: { $in: paths } };
 
     Tag.find(_query).lean().exec((err, tags) => {
-      resolve(tags);
+      if(err) {
+        reject(err)
+      } else {
+        resolve(tags);
+      }
     });
   });
 };

@@ -12,14 +12,22 @@ var mongoose = require('mongoose')
     , tags: { type: [{ type: ObjectId, ref: 'Tag' }], default:[]  }
     , active: { type: Boolean, default: true }
     , image: { type: imageSchema, required: true }
+    , content: { type: String, required: true }
     })
   , Post = mongoose.model('Post', schema)
   , Author = require('./author-model')
   , Tag = require('./tag-model');
 
-module.exports.findAll = () => {
+module.exports.getPostsByName = (search) => {
   return new Promise((resolve, reject) => {
     let _query = { active: true };
+
+    if(search) {
+      _query.$or = [
+        { title: new RegExp(search, 'i') },
+        { subtitle: new RegExp(search, 'i') }
+      ];
+    }
 
     Post.find(_query).populate('author').populate('tags').lean().exec((err, posts) => {
       if(err) {
@@ -28,6 +36,30 @@ module.exports.findAll = () => {
         resolve(posts);
       }
     });
+  });
+};
+
+module.exports.getPostsByTags = (tagPaths) => {
+  return new Promise((resolve, reject) => {
+    Tag.getIdsByPaths(tagPaths)
+      .then((tagIds) => {
+        let _query = { active: true };
+
+        if(tagIds) {
+          _query.tags = { $in: tagIds };
+        }
+
+        Post.find(_query).populate('author').populate('tags').lean().exec((err, posts) => {
+          if(err) {
+            reject(err)
+          } else {
+            resolve(posts);
+          }
+        });
+      })
+      .catch(err => {
+        reject(err);
+      });
   });
 };
 

@@ -60,10 +60,11 @@
           </ul>
 				</nav>
 
-        <form id="searchForm" class="flex flex-row justify-content-center" role="search">
+        <form id="searchForm" class="flex flex-row justify-content-center" role="search"
+					method="get" action="/">
           <input id="searchInput" type="search"
             class="awesomplete input-addon-field input-search text-white"
-            placeholder="Buscar" required>
+            placeholder="Buscar" required name="search">
 
           <button class="button-search" type="submit">
             <span class="text-invisible">Pesquisar</span>
@@ -93,7 +94,6 @@
 
     <script src="/public/js/menu.js"></script>
     <script src="/public/js/headroom.js"></script>
-    <script src="/public/js/awesomplete.js"></script>
 
 		{{#if hasCode}}
 			<script src="/public/js/sh/sh-core.js"></script>
