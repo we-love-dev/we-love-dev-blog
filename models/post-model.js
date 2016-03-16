@@ -10,6 +10,7 @@ var mongoose = require('mongoose')
     , createdIn: { type: Date, required: true }
     , author: { type: ObjectId, ref: 'Author', required: true }
     , tags: { type: [{ type: ObjectId, ref: 'Tag' }], default:[]  }
+    , mainTag: { type: ObjectId, ref: 'Tag' }
     , active: { type: Boolean, default: true }
     , image: { type: imageSchema, required: true }
     , content: { type: String, required: true }
@@ -29,7 +30,7 @@ module.exports.getPostsByName = (search) => {
       ];
     }
 
-    Post.find(_query).populate('author').populate('tags').lean().exec((err, posts) => {
+    Post.find(_query).populate('author').populate('tags').populate('mainTag').lean().exec((err, posts) => {
       if(err) {
         reject(err)
       } else {
@@ -49,13 +50,18 @@ module.exports.getPostsByTags = (tagPaths) => {
           _query.tags = { $in: tagIds };
         }
 
-        Post.find(_query).populate('author').populate('tags').lean().exec((err, posts) => {
-          if(err) {
-            reject(err)
-          } else {
-            resolve(posts);
-          }
-        });
+        Post.find(_query)
+          .populate('author')
+          .populate('tags')
+          .populate('mainTag')
+          .lean()
+          .exec((err, posts) => {
+            if(err) {
+              reject(err)
+            } else {
+              resolve(posts);
+            }
+          });
       })
       .catch(err => {
         reject(err);
@@ -67,11 +73,30 @@ module.exports.getPostByPath = (path) => {
   return new Promise((resolve, reject) => {
     let _query = { active: true, path: path };
 
-    Post.findOne(_query).populate('author').populate('tags').lean().exec((err, post) => {
+    Post.findOne(_query)
+      .populate('author')
+      .populate('tags')
+      .populate('mainTag')
+      .lean()
+      .exec((err, post) => {
+        if(err) {
+          reject(err)
+        } else {
+          resolve(post);
+        }
+      });
+  });
+};
+
+module.exports.getPostsByAuthor = (authorId) => {
+  return new Promise((resolve, reject) => {
+    let _query = { active: true, author: authorId };
+
+    Post.find(_query).populate('tags').populate('mainTag').lean().exec((err, posts) => {
       if(err) {
         reject(err)
       } else {
-        resolve(post);
+        resolve(posts);
       }
     });
   });

@@ -3,13 +3,13 @@
     <article class="box sm-100 lg-50 xlg-33 flex flex-column justify-content-center"
       role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-      <figure class="post-cover overlay brown-overlay">
+      <figure class="post-cover overlay {{mainTag.color}}-overlay">
         <img src="/public/img/articles/{{image.name}}" alt="{{image.alt}}" itemprop="thumbnailUrl">
       </figure>
 
       <header>
         <span class="text-invisible" itemprop="publisher">We Love Dev</span>
-        
+
         {{#each tags}}
           <a href="/{{path}}" class="post-category" rel="tag" itemprop="about">
             <span class="inner">{{name}}</span>

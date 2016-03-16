@@ -10,11 +10,15 @@ var mongoose = require('mongoose')
     })
   , Author = mongoose.model('Author', schema);
 
-module.exports.findById = (id) => {
+module.exports.getAuthorByPath = (path) => {
   return new Promise((resolve, reject) => {
-    let _query = { _id: id };
+    let _query = { path: path };
     Author.findOne(_query).lean().exec((err, autor) => {
-      resolve(autor);
+      if(err) {
+        reject(err)
+      } else {
+        resolve(autor);
+      }
     });
   });
 };
