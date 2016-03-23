@@ -866,6 +866,10 @@ input.input-search {
 	background: rgba(59, 67, 71, .85);
 }
 
+.overlay.green-overlay::after {
+	background: rgba(0, 77, 64, .85);
+}
+
 .special-link {
 	position: relative;
 	display: inline-block;

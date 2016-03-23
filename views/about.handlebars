@@ -1,0 +1,46 @@
+<article>
+  <header class="box width-100 flex flex-column justify-content-center">
+    <figure class="post-cover overlay brown-overlay">
+      <img src="/public/img/about-header.jpg" alt=" ...">
+    </figure>
+
+    <div class="header-post-inner">
+      <h1 class="post-title text-white text-bigger">
+        Nós amamos <br>
+        <span class="post-subtitle">desenvolver</span>
+      </h1>
+    </div>
+  </header>
+  <section class="wrapper-content">
+    <h2>
+      Vontade
+    </h2>
+
+    <p>
+      Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis.
+      Pra lá , depois divoltis eitis, paradis. <a class="special-link" href="#">Paisis, filhis, espiritis santis</a>. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris <kbd>alt + shift + r</kbd> qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
+    </p>
+
+    <h2>
+      Criadores
+    </h2>
+
+    <div class="flex justify-content-center flex-wrap">
+
+      {{#each authors}}
+        <div class="sm-100 md-50 flex justify-content-center flex-row-for-sm">
+          <a class="author flex justify-content-center align-items-center flex-column-for-sm flex-row-for-lg"
+            href="/author/{{path}}" rel="author" itemprop="author">
+            <img class="author-avatar big" src="/public/img/authors/{{image.name}}" alt="{{image.alt}}">
+            <h4 class="author-name text-dark">{{nickname}}</h4>
+          </a>
+        </div>
+      {{/each}}
+
+    </div>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem fugiat suscipit saepe quam fuga dolorum laboriosam blanditiis omnis et perferendis consectetur numquam corporis ab vero veniam, vel id provident totam.
+    </p>
+  </section>
+</article>

@@ -26,7 +26,6 @@ ctrl.renderPostPage = (req, res) => {
       _post.content = html;
       res.render('post', _options);
     });
-
   });
 };
 
