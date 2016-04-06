@@ -16,7 +16,8 @@ RUN npm install pm2@latest -g
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
 
-ADD src /data/src
+RUN git clone https://github.com/we-love-dev/we-love-dev-blog /data
+
 WORKDIR /data/src
 
 ENV PORT 80
