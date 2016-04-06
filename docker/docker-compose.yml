@@ -11,6 +11,8 @@ we-love-dev-web:
 we-love-dev-db:
   build: ./db
   restart: always
+  volumes:
+    - /data/db:/data/db
   environment:
     DB_ADMIN_NAME: "${DB_ADMIN_NAME}"
     DB_ADMIN_PASS: "${DB_ADMIN_PASS}"
