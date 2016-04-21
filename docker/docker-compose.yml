@@ -3,6 +3,8 @@ we-love-dev-web:
   restart: always
   links:
     - we-love-dev-db:db
+  ports:
+    - "80:80"
   environment:
     DB_URI: "mongodb://db/${DB_NAME}"
     DB_USER: "${DB_USER}"
