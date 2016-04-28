@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>My heart is broken - We Love Dev Blog</title>
+
+		<meta name="author" content="We Love Dev">
+
+		<link rel="shortcut icon" href="/img/favicon.png">
+
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/awesomplete.css">
+	</head>
+
+	<body>
+		<button id="header-toggle" class="header-toggle headroom">
+			<img src="/img/menu-icon.svg" alt="Abrir menu">
+			<span class="text-invisible">Abrir menu</span>
+		</button>
+
+		<header id="header" class="header flex flex-column space-around" role="banner">
+			<button class="close-button transparent">
+				<img src="/img/close-icon.svg" alt="Fechar menu">
+				<span class="text-invisible">Fechar menu</span>
+			</button>
+
+			<a href="index.html" class="logo align-self-center sm-60 md-100">
+				<img src="/img/we-love-dev-logo.svg" alt="We Love Dev logo">
+				<span class="text-invisible">We Love Dev Blog</span>
+			</a>
+
+			<div>
+				<nav role="navigation">
+					<ul class="categories-list" role="menubar">
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Back-end</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Front-end</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Arquitetura</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Metodologia</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Mobile</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="post-category">
+								<span class="inner">Tutoriais</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+				<form class="flex flex-row justify-content-center" role="search">
+					<input id="search" type="search" class="awesomplete input-addon-field input-search text-white"
+						placeholder="Buscar" required>
+
+					<button class="button-search">
+						<span class="text-invisible">Pesquisar</span>
+						<img src="/img/search-icon.svg" alt="Ícone de pesquisa">
+					</button>
+				</form>
+			</div>
+
+			<div>
+				<a class="link-icon icon" href="#">
+					<img src="/img/facebook-icon.svg" alt="Ícone do Facebook">
+					<span class="text-invisible">Nossa página no Facebook</span>
+				</a>
+
+				<a class="link-icon icon" href="#">
+					<img src="/img/github-icon.svg" alt="Ícone do Github">
+					<span class="text-invisible">Nosso repositório no Github</span>
+				</a>
+			</div>
+
+			<a class="about-link text-green text-bold" href="about.html">Sobre</a>
+		</header>
+
+		<main class="main flex flex-column align-items-center justify-content-center" role="main">
+			<h1>500</h1>
+
+			<p>
+				Você partiu o meu coração.
+			</p>
+
+			<button class="button orange-button rounded">
+				Voltar
+			</button>
+		</main>
+
+		<script src="/js/menu.js"></script>
+		<script src="/js/headroom.js"></script>
+		<script>
+			var el       = document.querySelector(".headroom");
+			var headroom = new Headroom(el);
+
+			headroom.init();
+		</script>
+
+		<script src="/js/awesomplete.js"></script>
+		<script>
+			var input        = document.getElementById("search");
+			var awesomplete  = new Awesomplete(input);
+
+			awesomplete.list = ["Java", "JavaScript", "Node.js"];
+		</script>
+	</body>
+</html>

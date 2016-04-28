@@ -147,8 +147,8 @@ table {
 }
 
 ::selection {
-	background: #D8D6BF;
-	color: #FFF;
+	background: #ECE5E5;
+	color: inherit;
 }
 
 body {
@@ -177,7 +177,6 @@ a, button {
 
 p {
 	font-size: 1.25em;
-	letter-spacing: -.1px;
 	line-height: 2;
 	margin-bottom: .75em;
 	text-rendering: optimizeLegibility;
@@ -352,6 +351,11 @@ textarea {
 	text-align: center;
 }
 
+	.box:last-child {
+		-webkit-flex-grow: 1;
+		flex-grow: 1;
+	}
+
 .sm-60 {
 	width: 60%;
 }
@@ -392,7 +396,7 @@ textarea {
 	overflow: hidden;
 	padding: .5em 1.75em;
 	position: relative;
-	top: 0;
+	/*top: 0;*/
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -585,7 +589,13 @@ input.input-search {
 	}
 
 .wrapper-content {
-	padding: 0 8%;
+	padding-right: 8%;
+	padding-left: 8%;
+}
+
+.post {
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 .post-category {
@@ -635,8 +645,6 @@ input.input-search {
 	font-size: 1.5625em;
 	margin: .5em 0;
 	position: relative;
-	padding-left: .5em;
-	padding-right: .5em;
 	transition: .2s;
 }
 
@@ -833,7 +841,7 @@ input.input-search {
 
 .rounded,
 .rounded > img {
-	border-radius: 1000px;
+	border-radius: 500px;
 }
 
 .overflow-hidden {
@@ -850,25 +858,28 @@ input.input-search {
 	width: 100%;
 }
 
-.overlay.brown-overlay::after {
+.overlay.brown-overlay::after,
+.brown-bg {
 	background: rgba(189, 149, 115, .9);
 }
 
-.overlay.red-overlay::after {
+.overlay.red-overlay::after,
+.red-bg {
 	background: rgba(239, 73, 85, .9);
 }
 
-.overlay.blue-gray-overlay::after {
+.overlay.blue-gray-overlay::after,
+.blue-gray-bg {
 	background: rgba(41, 48, 56, .9);
 }
 
-.overlay.gray-overlay::after {
+.overlay.gray-overlay::after,
+.gray-bg {
 	background: rgba(59, 67, 71, .85);
 }
 
 .special-link {
 	position: relative;
-	display: inline-block;
 }
 
 	.special-link::after {
@@ -882,7 +893,6 @@ input.input-search {
 		transition: .2s;
 		-webkit-transform: translateX(-50%);
 		transform: translateX(-50%);
-		will-change: width;
 	}
 
 		.special-link:focus::after, .special-link:hover::after {
@@ -955,7 +965,11 @@ input.input-search {
 }
 
 .gray-light-bg {
-	background: #F8F8F8;
+	background: #F2F2F2;
+}
+
+.blue-dark-bg {
+	background: #293038;
 }
 
 /* --------------------------------- */
@@ -1103,7 +1117,8 @@ input.input-search {
 	}
 
 	.wrapper-content {
-		padding: 0 22%;
+		padding-right: 22%;
+		padding-left: 22%;
 	}
 
 	.close-button {
