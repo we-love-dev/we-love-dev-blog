@@ -1,0 +1,211 @@
+.syntaxhighlighter {
+	font-size: 1em !important;
+	margin: 1em 0 !important;
+	overflow-y: hidden !important;
+	overflow-x: auto !important;
+	position: relative !important;
+	width: 100% !important
+}
+
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+	background: none !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	float: none !important;
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+	font-style: normal !important;
+	font-size: 1em !important;
+	font-weight: normal !important;
+	height: auto !important;
+	width: auto !important;
+	line-height: 1.1em !important;
+	margin: 0 !important;
+	min-height: inherit !important;
+	min-height: auto !important;
+	outline: 0 !important;
+	overflow: visible !important;
+	padding: 0 !important;
+	position: static !important;
+	top: auto !important;
+	left: auto !important;
+	right: auto !important;
+	bottom: auto !important;
+	text-align: left !important;
+	vertical-align: baseline !important
+}
+
+.syntaxhighlighter.source { overflow: hidden !important }
+
+.syntaxhighlighter .bold { font-weight: bold !important }
+
+.syntaxhighlighter .italic { font-style: italic !important }
+
+.syntaxhighlighter .line { white-space: pre !important }
+
+.syntaxhighlighter table { width: 100% !important }
+
+.syntaxhighlighter table caption {
+	padding: .5em 0 .5em 1em !important;
+	text-align: left !important
+}
+
+.syntaxhighlighter table td.code { width: 100% !important }
+
+.syntaxhighlighter table td.code .container { position: relative !important }
+
+.syntaxhighlighter table td.code .container textarea {
+	background: white !important;
+	border: none !important;
+	color: inherit;
+	overflow: hidden !important;
+	padding-left: 1em !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	height: 100% !important;
+	width: 100% !important;
+	white-space: pre !important
+}
+
+.syntaxhighlighter table td.gutter .line {
+	padding: .375em 1em .375em 1.125em !important;
+	text-align: right !important
+}
+
+.syntaxhighlighter table td.code .line { padding: .375em 1em !important }
+
+.syntaxhighlighter.nogutter td.code .container textarea,
+.syntaxhighlighter.nogutter td.code .line { padding-left: 0em !important }
+
+.syntaxhighlighter.show { display: block !important }
+
+.syntaxhighlighter.collapsed table { display: none !important }
+
+.syntaxhighlighter.ie {
+	font-size: .9em !important;
+	padding: 1px 0 1px 0 !important
+}
+
+.syntaxhighlighter.printing .line.alt1 .content,
+.syntaxhighlighter.printing .line.alt2 .content,
+.syntaxhighlighter.printing .line.highlighted .number,
+.syntaxhighlighter.printing .line.highlighted.alt1 .content,
+.syntaxhighlighter.printing .line.highlighted.alt2 .content { background: none !important }
+
+.syntaxhighlighter.printing .line .number { color: #BBB !important }
+
+.syntaxhighlighter.printing .line .content { color: black !important }
+
+.syntaxhighlighter.printing a { text-decoration: none !important }
+
+.syntaxhighlighter.printing .plain,
+.syntaxhighlighter.printing .plain a { color: black !important }
+
+.syntaxhighlighter.printing .comments,
+.syntaxhighlighter.printing .comments a { color: #008200 !important }
+.syntaxhighlighter.printing .string,
+.syntaxhighlighter.printing .string a { color: blue !important }
+
+.syntaxhighlighter.printing .keyword {
+	color: #006699 !important;
+	font-weight: bold !important
+}
+
+.syntaxhighlighter.printing .preprocessor { color: gray !important }
+
+.syntaxhighlighter.printing .variable { color: #AA7700 !important }
+
+.syntaxhighlighter.printing .value { color: #009900 !important }
+
+.syntaxhighlighter.printing .functions { color: #FF1493 !important }
+
+.syntaxhighlighter.printing .constants { color: #0066CC !important }
+
+.syntaxhighlighter.printing .script { font-weight: bold !important }
+
+.syntaxhighlighter.printing .color1,
+.syntaxhighlighter.printing .color1 a { color: gray !important }
+
+.syntaxhighlighter.printing .color2,
+.syntaxhighlighter.printing .color2 a { color: #FF1493 !important }
+
+.syntaxhighlighter.printing .color3,
+.syntaxhighlighter.printing .color3 a { color: red !important }
+
+.syntaxhighlighter.printing .break,
+.syntaxhighlighter.printing .break a { color: black !important }
+
+.syntaxhighlighter { background-color: white !important }
+
+.syntaxhighlighter .line.alt1 { background-color: white !important }
+
+.syntaxhighlighter .line.alt2 { background-color: #F9F9F9 !important }
+
+.syntaxhighlighter .line.highlighted.alt1,
+.syntaxhighlighter .line.highlighted.alt2 { background-color: #E0E0E0 !important }
+
+.syntaxhighlighter .line.highlighted.number { color: black !important }
+
+.syntaxhighlighter table caption { color: black !important }
+
+.syntaxhighlighter .gutter { color: #AFAFAF !important }
+
+.syntaxhighlighter .gutter .line { border-right: 3px solid #6CE26C !important }
+
+.syntaxhighlighter .gutter .line.highlighted {
+	background-color: #6CE26C !important;
+	color: white !important
+}
+
+.syntaxhighlighter.printing .line .content { border: none !important }
+
+.syntaxhighlighter.collapsed { overflow: visible !important }
+
+.syntaxhighlighter .plain,
+.syntaxhighlighter .plain a { color: black !important }
+
+.syntaxhighlighter .comments,
+.syntaxhighlighter .comments a { color: #008200 !important }
+
+.syntaxhighlighter .string,
+.syntaxhighlighter .string a { color: blue !important }
+
+.syntaxhighlighter .keyword { color: #006699 !important }
+
+.syntaxhighlighter .preprocessor { color: gray !important }
+
+.syntaxhighlighter .variable { color: #AA7700 !important }
+
+.syntaxhighlighter .value { color: #009900 !important }
+
+.syntaxhighlighter .functions { color: #FF1493 !important }
+
+.syntaxhighlighter .constants { color: #0066CC !important }
+
+.syntaxhighlighter .script {
+	background-color: none !important;
+	color: #006699 !important;
+	font-weight: bold !important
+}
+
+.syntaxhighlighter .color1,
+.syntaxhighlighter .color1 a { color: gray !important }
+
+.syntaxhighlighter .color2,
+.syntaxhighlighter .color2 a { color: #FF1493 !important }
+
+.syntaxhighlighter .color3,
+.syntaxhighlighter .color3 a { color: red !important }
+
+.syntaxhighlighter .keyword { font-weight: bold !important }
+
+.syntaxhighlighter .toolbar { display: none }

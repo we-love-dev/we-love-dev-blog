@@ -1,0 +1,32 @@
+{
+  "name": "we-love-dev",
+  "version": "1.0.0",
+  "description": "blog we love dev",
+  "main": "./bin/www",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm install",
+    "start": "DEBUG=we-love-dev:* nodemon --debug bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/we-love-dev/we-love-dev-blog.git"
+  },
+  "keywords": [
+    "blog",
+    "we love dev"
+  ],
+  "author": "Renan Johannsen de Paula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/we-love-dev/we-love-dev-blog/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "mongoose": "^4.3.5"
+  },
+  "homepage": "https://github.com/we-love-dev/we-love-dev-blog"
+}

@@ -1,0 +1,46 @@
+<section class="flex flex-wrap">
+  {{#each posts}}
+    <article class="box sm-100 lg-50 xlg-33 flex flex-column justify-content-center"
+      role="article" itemscope itemtype="http://schema.org/BlogPosting">
+
+      <figure class="post-cover overlay {{mainTag.color}}-overlay">
+        <img src="/public/img/articles/{{image.name}}" alt="{{image.alt}}" itemprop="thumbnailUrl">
+      </figure>
+
+      <header>
+        <span class="text-invisible" itemprop="publisher">We Love Dev</span>
+
+        {{#each tags}}
+          <a href="/{{path}}" class="post-category" rel="tag" itemprop="about">
+            <span class="inner">{{name}}</span>
+          </a>
+        {{/each}}
+
+        <h2 class="post-title" itemprop="headline">
+          <a class="text-white" href="/post/{{path}}" itemprop="url">
+            {{title}}
+            {{#if subtitle}}
+              <br>
+              <span class="post-subtitle">
+                {{subtitle}}
+              </span>
+            {{/if}}
+          </a>
+        </h2>
+
+        <time class="post-date text-white" pubdate date="{{createdIn}}" itemprop="datePublished">
+          {{longCreatedIn}}
+        </time>
+      </header>
+
+      <footer class="flex justify-content-center">
+        <a class="author flex justify-content-center align-items-center"
+          href="/author/{{author.path}}" rel="author" itemprop="author">
+          <img class="author-avatar small"
+            src="/public/img/authors/{{author.image.name}}" alt="{{author.image.alt}}">
+          <span class="author-name text-white">{{author.nickname}}</span>
+        </a>
+      </footer>
+    </article>
+  {{/each}}
+</section>

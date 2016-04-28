@@ -1,0 +1,112 @@
+<article role="article" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="box width-100 flex flex-column justify-content-center" role="heading">
+    <figure class="post-cover overlay {{post.mainTag.color}}-overlay">
+      <img src="/public/img/articles/{{post.image.name}}" alt="{{post.image.alt}}" itemprop="thumbnailUrl" />
+    </figure>
+
+    <div class="header-post-inner">
+      <span class="text-invisible" itemprop="publisher">We Love Dev</span>
+
+      {{#each post.tags}}
+        <a href="/{{path}}" class="post-category" rel="tag" itemprop="about">
+          <span class="inner">{{name}}</span>
+        </a>
+      {{/each}}
+
+      <h1 class="post-title text-white text-bigger" itemprop="headline">
+        {{post.title}}
+        {{#if post.subtitle}}
+          <br>
+          <span class="post-subtitle">
+            {{post.subtitle}}
+          </span>
+        {{/if}}
+      </h1>
+
+      <time class="post-date text-white" pubdate date="{{post.createdIn}}" itemprop="datePublished">
+        {{post.longCreatedIn}}
+      </time>
+
+      <a class="author flex justify-content-center align-items-center"
+        href="/author/{{post.author.path}}" rel="author" itemprop="author">
+        <img class="author-avatar small"
+          src="/public/img/authors/{{post.author.image.name}}" alt="{{post.author.image.alt}}">
+
+        <span class="author-name text-white">{{post.author.nickname}}</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="wrapper-content">
+    {{{post.content}}}
+  </section>
+
+  <footer class="footer flex flex-column wrapper-content gray-light-bg">
+    <div class="flex justify-content-center">
+      <a class="author flex justify-content-center align-items-center"
+        href="/author/{{post.author.path}}" rel="author" itemprop="author">
+        <img class="author-avatar small"
+          src="/public/img/authors/{{post.author.image.name}}" alt="{{post.author.image.alt}}">
+
+        <h4 class="author-name text-dark">{{post.author.nickname}}</h4>
+      </a>
+    </div>
+
+    <p class="text-center">
+      {{post.author.description}}
+    </p>
+
+    <p class="text-center">
+      <a class="special-link" href="/author/{{post.author.path}}">
+        Veja todas as contribuições do autor.
+      </a>
+    </p>
+
+    <ul class="inline-list flex justify-content-center">
+      {{#if post.author.facebook}}
+        <li>
+          <a class="link-icon icon" href="{{post.author.facebook}}" target="_blank">
+            <img src="/public/img/facebook-icon.svg" alt="Ícone do Facebook">
+            <span class="text-invisible">Facebook</span>
+          </a>
+        </li>
+      {{/if}}
+
+      {{#if post.author.plus}}
+        <li>
+          <a class="link-icon icon" href="{{post.author.plus}}" target="_blank">
+            <img src="/public/img/google-plus-icon.svg" alt="Ícone do Google Plus">
+            <span class="text-invisible">Google Plus</span>
+          </a>
+        </li>
+      {{/if}}
+
+      {{#if post.author.twitter}}
+        <li>
+          <a class="link-icon icon" href="{{post.author.twitter}}" target="_blank">
+            <img src="/public/img/twitter-icon.svg" alt="Ícone do Twitter">
+            <span class="text-invisible">Twitter</span>
+          </a>
+        </li>
+      {{/if}}
+
+      {{#if post.author.linkedin}}
+        <li>
+          <a class="link-icon icon" href="{{post.author.linkedin}}" target="_blank">
+            <img src="/public/img/linkedin-icon.svg" alt="Ícone do Linkedin">
+            <span class="text-invisible">LinkedIn</span>
+          </a>
+        </li>
+      {{/if}}
+
+      {{#if post.author.github}}
+        <li>
+          <a class="link-icon icon" href="{{post.author.github}}" target="_blank">
+            <img src="/public/img/github-icon.svg" alt="Ícone do Github">
+            <span class="text-invisible">Github</span>
+          </a>
+        </li>
+      {{/if}}
+    </ul>
+  </footer>
+</article>

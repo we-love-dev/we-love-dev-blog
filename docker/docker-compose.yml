@@ -1,0 +1,23 @@
+we-love-dev-web:
+  build: ./web
+  restart: always
+  links:
+    - we-love-dev-db:db
+  ports:
+    - "80:80"
+  environment:
+    DB_URI: "mongodb://db/${DB_NAME}"
+    DB_USER: "${DB_USER}"
+    DB_PASS: "${DB_PASS}"
+
+we-love-dev-db:
+  build: ./db
+  restart: always
+  volumes:
+    - /data/db:/data/db
+  environment:
+    DB_ADMIN_NAME: "${DB_ADMIN_NAME}"
+    DB_ADMIN_PASS: "${DB_ADMIN_PASS}"
+    DB_NAME: "${DB_NAME}"
+    DB_USER: "${DB_USER}"
+    DB_PASS: "${DB_PASS}"
