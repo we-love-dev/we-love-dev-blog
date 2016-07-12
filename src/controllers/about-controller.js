@@ -14,7 +14,7 @@ ctrl.renderAboutPage = (req, res) => {
       , closeMenu: true
       , hasCode: false
       , tags: results[0]
-      , authors: results[1].authors
+      , info: results[1]
     };
 
     res.render('about', _options);

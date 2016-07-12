@@ -1,0 +1,61 @@
+<button id="header-toggle" class="header-toggle headroom">
+  <img src="/public/img/menu-icon.svg" alt="Abrir menu">
+  <span class="text-invisible">Abrir menu</span>
+</button>
+
+{{#if closeMenu}}
+  <header id="header" class="header always-closed flex flex-column space-around" role="banner">
+  <button class="close-button transparent show">
+{{else}}
+  <header id="header" class="header flex flex-column space-around" role="banner">
+  <button class="close-button transparent">
+{{/if}}
+    <img src="/public/img/close-icon.svg" alt="Fechar menu">
+    <span class="text-invisible">Fechar menu</span>
+  </button>
+
+  <a href="/" class="logo align-self-center sm-60 md-100">
+    <img src="/public/img/we-love-dev-logo.svg" alt="We Love Dev logo">
+    <span class="text-invisible">We Love Dev Blog</span>
+  </a>
+
+  <div>
+    <nav role="navigation">
+      <ul class="categories-list" role="menubar">
+        {{#each tags}}
+          <li>
+            <a href="/{{path}}" class="post-category">
+              <span class="inner">{{name}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+
+    <form id="searchForm" class="flex flex-row justify-content-center" role="search"
+      method="get" action="/">
+      <input id="searchInput" type="search"
+        class="awesomplete input-addon-field input-search text-white"
+        placeholder="Buscar" required name="search">
+
+      <button class="button-search" type="submit">
+        <span class="text-invisible">Pesquisar</span>
+        <img src="/public/img/search-icon.svg" alt="Ícone de pesquisa">
+      </button>
+    </form>
+  </div>
+
+  <div>
+    <a class="link-icon icon" href="https://www.facebook.com/welovedev" target="_blank">
+      <img src="/public/img/facebook-icon.svg" alt="Ícone do Facebook">
+      <span class="text-invisible">Nossa página no Facebook</span>
+    </a>
+
+    <a class="link-icon icon" href="https://github.com/we-love-dev" target="_blank">
+      <img src="/public/img/github-icon.svg" alt="Ícone do Github">
+      <span class="text-invisible">Nosso repositório no Github</span>
+    </a>
+  </div>
+
+  <a class="about-link text-green text-bold" href="/about">Sobre</a>
+</header>

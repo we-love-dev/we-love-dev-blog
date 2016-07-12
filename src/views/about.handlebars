@@ -12,22 +12,18 @@
     </div>
   </header>
   <section class="wrapper-content">
-    <h2>
-      Vontade
-    </h2>
 
-    <p>
-      Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis.
-      Pra lá , depois divoltis eitis, paradis. <a class="special-link" href="#">Paisis, filhis, espiritis santis</a>. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris <kbd>alt + shift + r</kbd> qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
+    <p class="text-center">
+      Apoiado e mantido pela <a class="special-link" href="#">Brain Machine</a>, o We Love Dev
+      tem como objetivo a propagação de conteúdo integro e de qualidade para toda a comunidade brasileira de desenvolvimento!
     </p>
 
-    <h2>
-      Criadores
+    <h2 class="text-center">
+      Fundadores
     </h2>
 
     <div class="flex justify-content-center flex-wrap">
-
-      {{#each authors}}
+      {{#each info.authors}}
         <div class="sm-100 md-50 flex justify-content-center flex-row-for-sm">
           <a class="author flex justify-content-center align-items-center flex-column-for-sm flex-row-for-lg"
             href="/author/{{path}}" rel="author" itemprop="author">
@@ -36,11 +32,11 @@
           </a>
         </div>
       {{/each}}
-
     </div>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem fugiat suscipit saepe quam fuga dolorum laboriosam blanditiis omnis et perferendis consectetur numquam corporis ab vero veniam, vel id provident totam.
+    <p class="text-center">
+      De amantes do desenvolvimento para amantes do desenvolvimento!
     </p>
+
   </section>
 </article>

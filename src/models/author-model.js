@@ -7,6 +7,7 @@ var mongoose = require('mongoose')
     , name: { type: String, required: true }
     , nickname: { type: String, required: true }
     , image: { type: imageSchema, required: true }
+    , description: { type: String, required: true }
     })
   , Author = mongoose.model('Author', schema);
 
