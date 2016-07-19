@@ -10,7 +10,7 @@ var mongoose = require('mongoose')
     , createdIn: { type: Date, required: true }
     , author: { type: ObjectId, ref: 'Author', required: true }
     , tags: { type: [{ type: ObjectId, ref: 'Tag' }], default:[]  }
-    , mainTag: { type: ObjectId, ref: 'Tag' }
+    , mainTag: { type: ObjectId, ref: 'Tag', required: true }
     , active: { type: Boolean, default: true }
     , image: { type: imageSchema, required: true }
     , content: { type: String, required: true }
