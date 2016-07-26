@@ -878,6 +878,11 @@ input.input-search {
 	background: rgba(59, 67, 71, .85);
 }
 
+.overlay.yellow-overlay::after,
+.yellow-bg {
+	background: rgba(240, 219, 79, .9);
+}
+
 .special-link {
 	position: relative;
 }
