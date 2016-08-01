@@ -1,0 +1,61 @@
+<h2>
+    Introdução
+</h2>
+<p>
+    O strict mode é uma feature disponível desde o ECMAScript 5. Através dela é possível optar por uma variante
+    restrita do JavaScript, onde seu código será interpretado de modo mais rigoroso.
+    Neste modo, a engine do JavaScript tem seu comportamento modificado, gerando erros que antes eram silenciados e, até
+    mesmo, proibindo o uso de certas partes da linguagem que são tidas como problemáticas ou imaturas (sintaxes de
+    versões futuras do ECMAScript), nos forçando assim a escrever um código de melhor qualidade e ajudando a capturar
+    bugs mais precocemente.
+</p>
+<p>
+    Existem navegadores que não suportam o strict mode em sua plenitude
+    (conforme a página <a class="special-link" href="http://kangax.github.io/compat-table/es5/">Compat Table</a>)
+    , o que muitas vezes proporciona comportamentos lamentáveis. Portanto, caso sua aplicação possua uma gama peculiar
+    de browsers, fique atento a suas respectivas compatibilidades. Código strict mode e código não-strict mode podem
+    coexistir, então scripts podem optar pelo strict mode incrementalmente.
+</p>
+
+<h2>Invocando strict mode</h2>
+
+<p>
+    Scrict mode pode ser usado em <i>scripts</i> ou <i>funções individuais</i>. Elementos como <i>eval</i>,
+    <i>function</i>, atributos de <i>event handlers</i>, strings passadas para <i>setTimeout</i> e
+    coisas do tipo são <i>scripts</i> e, por isso, o strict mode funcionará adequadamente.
+</p>
+
+<h3>Strict mode para scripts</h3>
+
+<p>
+    Para invocar o strict mode em um script inteiro, simplesmente coloque a declaração "use strict"; (ou 'use strict';)
+    antes de qualquer outra declaração:
+</p>
+
+<pre class="brush: js;">
+// Sintaxe strict mode para todo o script
+"use strict";
+var v = "Oi! Eu sou um script strict mode!";
+</pre>
+
+<h3>Strict mode para funções</h3>
+
+<p>
+    Da mesma forma, para invocar strict mode em uma função, coloque a declaração "use strict"; (ou 'use strict';) no
+    corpo da função antes de qualquer outra declaração.
+</p>
+
+<pre class="brush: js;">
+function strict(){
+  // Sintaxe strict mode a nível de função
+  'use strict';
+  function nested() { return "E eu também!"; }
+  return "Oi! Eu sou uma função strict mode!  " + nested();
+}
+function notStrict() { return "Eu não sou strict."; }
+</pre>
+
+<blockquote>
+    "Finalizarei esse artigo até amanhã!"
+    <cite>FalvoJr (2016)</cite>
+</blockquote>
