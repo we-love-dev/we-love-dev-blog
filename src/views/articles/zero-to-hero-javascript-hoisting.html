@@ -1,17 +1,15 @@
+<h2>Introdução</h2>
 
 <p>
-    Em qualquer área da nossa vida conceitos básicos são fundamentais para criarmos uma base sólida para
-    sustentar nossas realizações. Nesse artigo vamos explorar um desses conceitos importantes na linguagem
-    JavaScript, o qual nos permitirá criar uma aplicação bem estruturada e protegida de determinadas falhas,
-    o assunto abordado é conhecido como <strong><i>Hoisting</i></strong>.
+    Caso você já esteja familiarizado com a linguagem JavaScript, deve ter percebido o quão flexível e
+    poderosa ela é. Entretanto, como diz o tio Ben, Grandes poderes trazem grandes responsabilidades!
 </p>
 
 <p>
-    Caso você já esteja familiarizado com a linguagem JavaScript, já deve ter percebido o quão flexível e
-    poderosa ela é. Entretanto isso requer uma responsabilidade maior em estruturar o código de maneira a
-    evitar problemas.
-
+    Nesse artigo iremos explorar o conceito de <strong><i>Hoisting</i></strong>,
+    que nos permitirá criar aplicações robustas e protegidas de comportamentos inesperados.
 </p>
+
 
 <h2>Afinal o que é Hoisting?</h2>
 
@@ -27,8 +25,8 @@
 <p>
     Em JavaScript o conceito mantém a fidelidade da definição, visto que hoisting é o comportamento de
     elevar as declarações ao topo do escopo em que elas são definidas. Isto significa que não importa a
-    ordem de declaração ou uso, por intermédio do <strong>hoisting</strong> o JavaScript sempre colocará a declaração em primeiro
-    lugar.
+    ordem de declaração ou uso, por intermédio do <strong>hoisting</strong> o JavaScript sempre colocará as
+    declarações em primeiro lugar.
 </p>
 
 <blockquote>
@@ -54,11 +52,12 @@
     Analisando o código somos tendenciosos a acreditar que o valor impresso será 10, uma vez que existe uma
     declaração da variável "a" na linha 1 e o uso da mesma variável na linha 4, certo? Errado, isso porque não estamos lidando
     com a mesma variável, uma vez que se tratam de <strong>escopos</strong> diferentes, se você não está familiarizado com o conceito de escopo em JavaScript,
-    sugiro a leitura do post <a href="/post/zero-to-hero-javascript-variaveis">Zero to hero JavaScript - Variáveis</a>.
+    sugiro a leitura do artigo sobre <a target="_blank" href="/post/zero-to-hero-javascript-variaveis">Variáveis</a>
+    da série <a target="_blank" href="/?search=Zero+to+hero+JavaScript">Zero to hero JavaScript</a>.
 </p>
 
 <p>
-    Então qual será a verdadeira saída do código acima? A resposta é <code>undefined</code>
+    Então qual será a verdadeira saída do código acima? A resposta é <code>undefined</code>.
 </p>
 
 <p>
