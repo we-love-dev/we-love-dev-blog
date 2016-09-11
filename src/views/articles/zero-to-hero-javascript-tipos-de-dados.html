@@ -12,7 +12,7 @@
 </p>
 
 <p>
-    Neste artigo entenderemos um pouco mais sobre os tipos primitivos e suas
+    Neste artigo entenderemos um pouco mais sobre os tipos de dados e suas
     principais características.
 </p>
 
@@ -190,8 +190,10 @@ if(!("Não é um número" - 22)) { // equivalente a !NaN
 
 <p>
     Definido na ECMAScript 6, representa um tipo de dado cuja as instancias são imutáveis e únicas.
-    Para mais informações
-
+    Para mais informações consulte
+    <a class="special-link" target="_blank" href="http://www.w3schools.com/jsref/jsref_obj_math.asp">
+        este material
+    </a>.
 </p>
 
 <h3>
@@ -217,13 +219,118 @@ if(!("Não é um número" - 22)) { // equivalente a !NaN
 </p>
 
 <h2>
+    Object
+</h2>
+
+<p>
+    Em JavaScript os objetos são estruturas de dados dinâmicas chave valor
+    que comportam qualquer tipo de dados.
+</p>
+
+<p>
+    Neste artigo veremos alguns conceitos básicos e futuramente, em outros artigos da
+    série iremos nos aprofundar mais, principalmente em orientação a protótipo.
+</p>
+
+<p>
+    Para construir um objeto podemos utilizar a forma literal.
+</p>
+
+<p>
+    Exemplo:
+</p>
+
+<pre class="brush: js;">
+    let obj = {};
+</pre>
+
+<p>
+    A qualquer momento podemos adicionar e remover propriedades de um determinado Objeto.
+</p>
+
+<p>
+    Exemplo:
+</p>
+
+<pre class="brush: js;">
+    let pessoa = {
+        nome: 'Renan'
+    };
+
+    // Cria propriedade dinamicamente
+    pessoa.idade = 24;
+
+    // Remove propriedade nome
+    delete pessoa.nome;
+</pre>
+
+<p>
+    Propriedades de um determinado objeto podem ser outros objetos ou funções.
+</p>
+
+<p>
+    Exemplo:
+</p>
+
+<pre class="brush: js;">
+    let pessoa = {
+        nome: 'Renan',
+        endereco: {
+          logradouro: 'José Inocencio de Camargo Lima Filho',
+          numero: '223'
+        },
+        falar: function() {
+            console.log(this.nome);
+        }
+    };
+
+    pessoa.falar();
+
+    // $ Renan
+</pre>
+
+<p>
+    Pelo fato dos objetos em JavaScript serem uma coleção de dados, podemos acessar seus valores através da notação de array.
+</p>
+
+<p>
+    Este tipo de notação se mostra muito útil quando precisamos acessar dinâmicamente as propriedades dos objetos.
+</p>
+
+<p>
+    Exemplo:
+</p>
+
+<pre class="brush: js;">
+    var pessoa = {
+        nome: 'Renan',
+    }
+
+    pessoa['idade'] = 24;
+
+    for (var prop in pessoa) {
+        console.log( pessoa[prop] );
+    }
+
+    // $ Renan
+    // $ 24
+</pre>
+
+<h2>
     Conclusão
 </h2>
 
 <p>
-    Espero ter contribuído com este apanhado geral sobre os tipos primitivos de dados e
-    não se esqueçam de conferir os outros artigos da série
+    Espero ter contribuído com este apanhado geral sobre os tipos primitivos de dados e Object.
+</p>
+
+<p>
+    Não se esqueçam de conferir os outros artigos da série
     <a target="_blank" href="/?search=Zero+to+hero+JavaScript">
         Zero to hero JavaScript
     </a>.
+</p>
+
+<p>
+    Abraços!
 </p>
