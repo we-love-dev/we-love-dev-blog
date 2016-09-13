@@ -4,7 +4,7 @@
 
 <p>
     Neste artigo iremos entender o funionamento de um dos principais recursos do JavaScript.
-    Isso memso, funções são extremamente importantes e trazem um dinamismo ainda maior para a linguagem.
+    Isso mesmo, funções são extremamente importantes e trazem um dinamismo ainda maior para a linguagem.
 </p>
 
 <p>
@@ -16,9 +16,8 @@
 </h2>
 
 <p>
-    Diferente do que estamos acostumados nas linguagens como Java, C#, entre outras,
-    as funções em JavaScript podem ser atribuídas a variáveis, passadas por parâmetro e retornadas por outras funções.
-    Isso se dá devido as caracteristicas de <strong>First Class Functions</strong> e <strong>Higher Order Functions</strong>.
+    Diferente do que estamos tradicionalmente acostumados em linguagens como Java ou C#, as funções em JavaScript podem ser atribuídas a variáveis, passadas por parâmetro e retornadas por outras funções.
+    Isso se dá devido às caracteristicas de <strong>First Class Functions</strong> e <strong>Higher Order Functions</strong>.
 </p>
 
 <p>
@@ -43,7 +42,7 @@
 </h2>
 
 <p>
-    A declaração de funções se da a partir da palavra chave function e podem ser criadas das seguintes formas:
+    A declaração de funções se dá a partir da palavra chave <i>function</i> e podem ser criadas das seguintes formas:
 </p>
 
 <dl>
@@ -82,7 +81,7 @@
 
 <p>
     A grande diferença entre as duas formas de invocação é que as declaradas com <strong>Function Declaration</strong>
-    são carregadas antes da interpretação do código devido ao comportamento de Hoisting da linguagem.
+    são carregadas antes da interpretação do código, devido ao comportamento de Hoisting da linguagem.
 </p>
 
 <p>
@@ -99,7 +98,7 @@
 
 <p>
     A declaração de uma função não necessariamente implica na invocação e execução da mesma.
-    Para invocar uma função existem quatro maneiras distintas:
+    Nesse sentido, existem quatro maneiras distintas para invocar uma função:
 </p>
 
 <dl>
@@ -144,9 +143,9 @@
         o acesso aos atributos do objeto.
     </dd>
 
-    <dt>Invocação através de call e aply</dt>
+    <dt>Invocação através de <i>call</i> e <i>apply</i></dt>
     <dd>
-        Funções podem ser invocadas através dos métodos <strong>call</strong> e <strong>aply</strong> contidos em seus protótipos.
+        Funções podem ser invocadas através dos métodos <strong>call</strong> e <strong>apply</strong> (contidos em seus protótipos).
         Para este tipo de invocação devemos especificar o contexto e seus respectivos parâmetros.
         <br>
         Exemplo:
@@ -168,12 +167,12 @@
             // $ Renan Johannsen de Paula
         </pre>
 
-        A diferença entre o <strong>call</strong> e <strong>aply</strong> se da na forma como passamos os parâmetros.
-        No call utilizamos a invocação convencional e no aply utilizamos um array
+        A diferença entre o <strong>call</strong> e <strong>apply</strong> se da na forma como passamos os parâmetros.
+        No <i>call</i> utilizamos a invocação convencional e no <i>apply</i> utilizamos um array
         para a passagem de parâmetros.
     </dd>
 
-    <dt>Invocação através do operador new</dt>
+    <dt>Invocação através do operador <i>new</i></dt>
     <dd>
         Através do operador <strong>new</strong> podemos invocar funções para a criação de objetos.
         Nestes casos as funções são denominadas <strong>Funções Construtoras</strong> onde, por convenção,
@@ -193,7 +192,7 @@
 
         O operador <strong>new</strong> basicamente cria implicitamento um novo objeto para ser passado como escopo da função,
         ou seja, o <strong>this</strong> referencia o objeto que foi criado.
-        Desta forma conseguimos simular estruturas similares as classes do Java, C# etc.
+        Desta forma conseguimos simular estruturas similares às classes do Java, C# etc.
     </dd>
 
     <dt>Invocação direta VS Invocação através do operador new</dt>
@@ -230,9 +229,9 @@
 </h2>
 
 <p>
-    Closures ou fechamentos é a capacidade das funções se "lembrarem" do contexto onde as mesmas foram criadas.
-    Esta capacidade de associar dados do ambiente com uma função está diretamente ligada a orientção a objetos,
-    onde os objetos nos permitem associar dados (propriedades do objeto) utilizando um ou mais métodos.
+    Closures ou Fechamentos são a capacidade das funções se "lembrarem" do contexto de onde foram criadas.
+    Esta capacidade de associar dados do ambiente com uma função está diretamente ligada à orientção a objetos,
+    onde os objetos nos permitem associar dados (atributos) utilizando um ou mais métodos.
 </p>
 
 <p>
@@ -322,12 +321,12 @@
 </h2>
 
 <p>
-    Callback são pedaços de códigos passados como parâmetro para serem executados no momento oportuno, como
-    por exemplo, após a consulta em banco de dados ou após a obtenção da resposta de uma requisição ajax.
+    Callbacks são pedaços de códigos passados como parâmetro para serem executados no momento oportuno, como
+    por exemplo, após a consulta em banco de dados ou após a obtenção da resposta de uma requisição AJAX.
 </p>
 
 <p>
-    Esta estratégia é bem parecida com o padrão de projeto listener.
+    Esta estratégia é bem parecida com o padrão de projeto Listener.
 </p>
 
 <p>
