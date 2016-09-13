@@ -195,6 +195,34 @@
         ou seja, o <strong>this</strong> referencia o objeto que foi criado.
         Desta forma conseguimos simular estruturas similares as classes do Java, C# etc.
     </dd>
+
+    <dt>Invocação direta VS Invocação através do operador new</dt>
+    <dd>
+        Algumas pessoas possuem dúvidas entre a invocação direta e a invocação através do operador <strong>new</strong>.
+        Como foi dito no tópico anterior, o operador <strong>new</strong> retorna um novo objeto com base nas definições
+        da função, enquanto a invocação direta apenas retorna o que está no <strong>return</strong> da função.
+        <br>
+        Exemplo:
+
+        <pre class="brush: js;">
+            function Pessoa(nome, idade) {
+              this.nome = nome;
+              this.idade = idade;
+              this.getPersonInfo = function() {
+                return this.nome + ' ' + this.idade;
+              }
+
+              return this.getPersonInfo();
+            }
+
+            var renan = new Pessoa('renan jp', 24);
+            var jov = Pessoa('matheus', 26);
+        </pre>
+
+        A variável renan é <strong>objeto</strong> com as definições da função Pessoa, enquanto a variável <strong>jov</strong> é uma String
+        com a propriedade nome e idade informados por paramêtro.
+    </dd>
+
 </dl>
 
 <h2>
@@ -229,11 +257,64 @@
 
     var soma10 = somaBase(10);
     // $ 15
+
+    var soma5e10 = soma(5)(10);
+    // $ 15
 </pre>
 
 <p>
     Observe que na linha 7 o contexto da invocação da função <strong>soma</strong>
     é armazenado e posteriormente utilizado nas linhas 9 e 12.
+
+    <strong>Curiosidade:</strong> como no javascript funções podem retornar outras funções, podemos executá-las
+    chamando apenas um ou mais <strong>()</strong> de acordo com a quantidade de funções retornadas.
+</p>
+
+<h2>
+    Currying
+</h2>
+
+<p>
+    Currying é uma característica de linguagens funcionais como por exemplo Haskell e Scala. O Javascript possui capacidades funcionais,
+    mas o Currying não é construído por padrão.
+    Esta capacidade consiste em transformar uma função com N argumentos em várias funções com argumento apenas.
+    É criada uma cadeia de funções parcialmente aplicadas que se resolve com uma funcionalidade ou N funcionalidades.
+</p>
+
+<p>
+    Esta é uma prática útil mas pouco utilizada devido a complexidade do código que pode ser gerada.
+</p>
+
+<p>
+    Exemplo:
+</p>
+
+<pre class="brush: js;">
+    const one = document.getElementById('one');
+    const two = document.getElementById('two');
+
+    const f = function f(a) {
+       return function (b) {
+          return function (c) {
+             return a.addEventListener(b, function (event) {
+                event.target.style.backgroundColor = c;
+             });
+          };
+       };
+    };
+
+    const oneEventColor = f(one);
+    const twoEventColor = f(two);
+
+    oneEventColor('click', 'blue');
+    oneEventColor('mouseout', 'yellow');
+    twoEventColor('mouseouver', 'red');
+</pre>
+
+<p>
+    Observe que na linha 14 e 15 armazenamos em variáveis as referências de funções que serão aplicadas no elementos <strong>one</strong> e <strong>two</strong>.
+    Com essa referência, atribuiremos o listener de <strong>click</strong>, que mudará a cor de background para azul, e o listener de <strong>mouseout</strong>, que mudará a cor para amarelo,
+    no elemento <strong>one</strong> e o listener de <strong>mouseouver</strong>, que mudará a cor para vermelho, no elemento <strong>two</strong>.
 </p>
 
 <h2>
