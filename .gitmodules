@@ -1,0 +1,3 @@
+[submodule "src/views/articles"]
+	path = src/views/articles
+	url = https://github.com/we-love-dev/articles.git
