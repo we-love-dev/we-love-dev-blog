@@ -9,4 +9,4 @@ Criado por amantes do desenvolvimento para amantes do desenvolvimento!
 Seja um amante do desenvolvimento também!
 
 Contribua para a revisão e incremento dos artigos realizando pull request neste
-[repositório]().
+[repositório](https://github.com/we-love-dev/articles.git).
