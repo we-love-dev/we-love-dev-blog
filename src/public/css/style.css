@@ -871,7 +871,7 @@ input.input-search {
 }
 
 .overlay.yellow-overlay::after {
-	background: rgba(240, 182, 7, .85);
+	background: rgba(240, 182, 7, .70);
 }
 
 .special-link {
