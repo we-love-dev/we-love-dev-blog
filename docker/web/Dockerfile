@@ -23,8 +23,6 @@ WORKDIR /data
 RUN git submodule update --init --recursive
 RUN git submodule foreach git pull origin master
 
-WORKDIR /data/src
-
 ENV PORT 80
 EXPOSE $PORT
 
