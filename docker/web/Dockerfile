@@ -21,6 +21,7 @@ RUN git clone https://github.com/we-love-dev/we-love-dev-blog /data
 WORKDIR /data
 
 RUN git submodule update --init --recursive
+RUN git submodule foreach git pull origin master
 
 WORKDIR /data/src
 
