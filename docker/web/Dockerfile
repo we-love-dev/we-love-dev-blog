@@ -17,6 +17,7 @@ ADD run.sh /run.sh
 RUN chmod +x /run.sh
 
 RUN git clone https://github.com/we-love-dev/we-love-dev-blog /data
+RUN git submodule update --init --recursive
 
 WORKDIR /data/src
 
