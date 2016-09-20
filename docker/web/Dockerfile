@@ -18,9 +18,11 @@ RUN chmod +x /run.sh
 
 RUN git clone https://github.com/we-love-dev/we-love-dev-blog /data
 
-WORKDIR /data/src
+WORKDIR /data
 
 RUN git submodule update --init --recursive
+
+WORKDIR /data/src
 
 ENV PORT 80
 EXPOSE $PORT
