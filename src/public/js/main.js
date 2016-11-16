@@ -1,9 +1,5 @@
-(function(Headroom) {
-  'use strict';
+;(function (Headroom, document) {
+  'use strict'
 
-  var el = document.querySelector('.headroom')
-    , headroom  = new Headroom(el);
-
-  headroom.init();
-
-})(Headroom);
+  new Headroom(document.querySelector('.headroom')).init()
+})(window.Headroom, window.document)

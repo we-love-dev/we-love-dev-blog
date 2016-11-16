@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var express = require('express')
-  , ctrl = require('../controllers/about-controller')
-  , router = express.Router();
+const express = require('express')
+const ctrl = require('../controllers/about-controller')
+const router = express.Router()
 
-router.get('/about', ctrl.renderAboutPage);
+router.get('/about', ctrl.renderAboutPage)
 
-module.exports = router;
+module.exports = router

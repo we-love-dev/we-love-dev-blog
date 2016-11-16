@@ -10,3 +10,9 @@ Seja um amante do desenvolvimento também!
 
 Contribua para a revisão e incremento dos artigos realizando pull request neste
 [repositório](https://github.com/we-love-dev/articles.git).
+
+## Atom plugins:
+
+- [EditorConfig](https://atom.io/packages/editorconfig)
+- [linter-js-standard](https://atom.io/packages/linter-js-standard)
+- [atom-standard-formatter](https://atom.io/packages/standard-formatter)

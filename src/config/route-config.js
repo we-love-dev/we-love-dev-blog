@@ -1,18 +1,17 @@
-'use strict';
+'use strict'
 
-var config = {}
-  , path = require('path')
-  , fs = require('fs')
-  , env = require('../env');
+const path = require('path')
+const fs = require('fs')
+const config = {}
 
-config.configRoutes = function(app) {
-  var _routePath = path.join(__dirname, '../routes')
-    , _fileNames = fs.readdirSync(_routePath);
+config.configRoutes = function (app) {
+  let _routePath = path.join(__dirname, '../routes')
+  let _fileNames = fs.readdirSync(_routePath)
 
-  _fileNames.forEach(function(fileName) {
-    var routeConfig = require(path.join(_routePath, fileName));
-    app.use(routeConfig);
-  });
+  _fileNames.forEach(function (fileName) {
+    var routeConfig = require(path.join(_routePath, fileName))
+    app.use(routeConfig)
+  })
 }
 
-module.exports = config;
+module.exports = config

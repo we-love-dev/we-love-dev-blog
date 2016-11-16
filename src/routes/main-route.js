@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-var express = require('express')
-  , ctrl = require('../controllers/main-controller')
-  , router = express.Router();
+const express = require('express')
+const ctrl = require('../controllers/main-controller')
+const router = express.Router()
 
-router.get('/', ctrl.renderHomePage);
-router.get('/:tag', ctrl.renderTagSearsh);
+router.get('/', ctrl.renderHomePage)
+router.get('/:tag', ctrl.renderTagSearsh)
 
-module.exports = router;
+module.exports = router

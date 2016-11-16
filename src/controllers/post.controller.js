@@ -1,32 +1,40 @@
-'use strict';
+'use strict'
 
-var Post = require('../models/post-model')
-  , Tag = require('../models/tag-model')
-  , fs = require('fs')
-  , path = require('path')
-  , ctrl = {}
-  , ARTICLE_DIR = path.join(__dirname, '../views/articles/')
-  , ENCODE = 'utf8';
+const Post = require('../models/post-model')
+const Tag = require('../models/tag-model')
+const fs = require('fs')
+const path = require('path')
+const ctrl = {}
+const ARTICLE_DIR = path.join(__dirname, '../views/articles/')
+const ENCODE = 'utf8'
+const CACHE = {}
 
 ctrl.renderPostPage = (req, res) => {
-  let _promises = [Tag.getAllTags(), Post.getPostByPath(req.params.path)];
+  let _promises = [Tag.getAllTags(), Post.getPostByPath(req.params.path)]
   Promise.all(_promises).then((results) => {
     let _post = results[1]
-      , _tag = results[0]
-      , _options = {
-          layout: 'template'
-        , closeMenu: true
-        , hasCode: true
-        , title: _post.title
-        , tags: _tag
-        , post: _post
-      };
+    let _tag = results[0]
+    let _options = {
+      layout: 'template',
+      closeMenu: true,
+      hasCode: true,
+      title: _post.title,
+      tags: _tag,
+      post: _post
+    }
 
-    fs.readFile(path.join(ARTICLE_DIR, _post.content), ENCODE, function (err, html) {
-      _post.content = html;
-      res.render('post', _options);
-    });
-  });
-};
+    if (CACHE[_post.content]) {
+      _post.content = CACHE[_post.content]
+      return res.render('post', _options)
+    } else {
+      fs.readFile(path.join(ARTICLE_DIR, _post.content), ENCODE, (err, html) => {
+        if (err) throw err
+        CACHE[_post.content] = html
+        _post.content = html
+        return res.render('post', _options)
+      })
+    }
+  })
+}
 
-module.exports = ctrl;
+module.exports = ctrl

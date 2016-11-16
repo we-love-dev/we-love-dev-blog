@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var mongoose = require('mongoose')
-  , schema = new mongoose.Schema({
-      name: { type: String, required: true }
-    , alt: { type: String, required: true }
-    });
+const mongoose = require('mongoose')
+const schema = new mongoose.Schema({
+  name: { type: String, required: true },
+  alt: { type: String, required: true }
+})
 
-module.exports = schema;
+module.exports = schema

@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var express = require('express')
-  , ctrl = require('../controllers/post.controller')
-  , router = express.Router();
+const express = require('express')
+const ctrl = require('../controllers/post.controller')
+const router = express.Router()
 
-router.get('/post/:path', ctrl.renderPostPage);
+router.get('/post/:path', ctrl.renderPostPage)
 
-module.exports = router;
+module.exports = router
