@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 // Config handlebars
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
-app.use('/public', express.static('public'))
+app.use('/public', express.static('dist', { maxAge: '1d' }))
 
 // Config routes
 routeManager.configRoutes(app)

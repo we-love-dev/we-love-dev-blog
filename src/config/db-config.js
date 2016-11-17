@@ -3,15 +3,14 @@
 const mongoose = require('mongoose')
 const env = require('../env')
 const debug = require('./debug-config')('db')
-const dbConfig = env.db
 
 mongoose.Promise = global.Promise
-mongoose.connect(dbConfig.DB_URI, dbConfig.DB_CREDENTIAL)
+mongoose.connect(env.db.uri, env.db.options)
 
 const db = mongoose.connection
 
 db.on('connected', () => {
-  debug(`Connected with: ${dbConfig.DB_URI}`)
+  debug(`Connected with: ${env.db.uri}`)
 })
 
 db.on('open', function () {

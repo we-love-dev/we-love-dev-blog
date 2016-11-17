@@ -5,19 +5,15 @@
   const headerCtrl = document.getElementById('header-toggle')
   const headerCloseCtrl = headerEl.querySelector('.close-button')
 
-  function menuToggle () {
-    headerCtrl.addEventListener('click', function () {
-      if (!headerEl.classList.contains('is-open')) {
-        headerEl.className = headerEl.className + ' is-open'
-      }
-    })
+  headerCtrl.addEventListener('click', function () {
+    if (!headerEl.classList.contains('is-open')) {
+      headerEl.className = headerEl.className + ' is-open'
+    }
+  })
 
-    headerCloseCtrl.addEventListener('click', function () {
-      if (headerEl.classList.contains('is-open')) {
-        headerEl.classList.remove('is-open')
-      }
-    })
-  }
-
-  menuToggle()
+  headerCloseCtrl.addEventListener('click', function () {
+    if (headerEl.classList.contains('is-open')) {
+      headerEl.classList.remove('is-open')
+    }
+  })
 })(window.document)

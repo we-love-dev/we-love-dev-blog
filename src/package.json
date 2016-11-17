@@ -5,7 +5,7 @@
   "main": "./bin/www",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "npm install",
+    "prestart": "npm install && gulp build",
     "start": "nodemon --debug bin/www"
   },
   "repository": {
@@ -22,13 +22,22 @@
     "url": "https://github.com/we-love-dev/we-love-dev-blog/issues"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
     "body-parser": "^1.14.2",
     "compression": "^1.6.2",
     "debug": "^2.2.0",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^2.0.0",
     "mongoose": "^4.3.5",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "run-sequence": "^1.2.2"
   },
   "homepage": "https://github.com/we-love-dev/we-love-dev-blog"
 }
