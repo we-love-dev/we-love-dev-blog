@@ -1,5 +1,7 @@
 <button id="header-toggle" class="header-toggle headroom">
-  <img src="/public/img/menu-icon.svg" alt="Abrir menu">
+  <svg class="menu-icon">
+    <use xlink:href="/public/img/icons/svg-symbols.svg#menu-icon"/>
+  </svg>
   <span class="text-invisible">Abrir menu</span>
 </button>
 
@@ -10,7 +12,9 @@
   <header id="header" class="header flex flex-column space-around" role="banner">
   <button class="close-button transparent">
 {{/if}}
-    <img src="/public/img/close-icon.svg" alt="Fechar menu">
+    <svg class="close-icon">
+      <use xlink:href="/public/img/icons/svg-symbols.svg#close-icon"/>
+    </svg>
     <span class="text-invisible">Fechar menu</span>
   </button>
 
@@ -40,19 +44,25 @@
 
       <button class="button-search" type="submit">
         <span class="text-invisible">Pesquisar</span>
-        <img src="/public/img/search-icon.svg" alt="Ícone de pesquisa">
+        <svg class="search-icon">
+          <use xlink:href="/public/img/icons/svg-symbols.svg#search-icon"/>
+        </svg>
       </button>
     </form>
   </div>
 
   <div>
     <a class="link-icon icon" href="https://www.facebook.com/welovedev" target="_blank">
-      <img src="/public/img/facebook-icon.svg" alt="Ícone do Facebook">
+      <svg class="facebook-icon">
+        <use xlink:href="/public/img/icons/svg-symbols.svg#facebook-icon"/>
+      </svg>
       <span class="text-invisible">Nossa página no Facebook</span>
     </a>
 
     <a class="link-icon icon" href="https://github.com/we-love-dev" target="_blank">
-      <img src="/public/img/github-icon.svg" alt="Ícone do Github">
+      <svg class="github-icon">
+        <use xlink:href="/public/img/icons/svg-symbols.svg#github-icon"/>
+      </svg>
       <span class="text-invisible">Nosso repositório no Github</span>
     </a>
   </div>

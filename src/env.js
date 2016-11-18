@@ -17,6 +17,7 @@ var env = {
       js: { src: './public/js', target: './dist/js' },
       css: { src: './public/css', target: './dist/css' },
       imgs: { src: './public/img', target: './dist/img' },
+      icons: { src: './public/img/icons', target: './dist/img/icons' },
       fonts: { src: './public/font', target: './dist/font' },
       vendor: {
         js: { src: './public/vendor/js', target: './dist/vendor/js' },

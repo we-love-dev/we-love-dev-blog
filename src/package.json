@@ -34,6 +34,8 @@
     "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.1",
     "gulp-if": "^2.0.2",
+    "gulp-svg-symbols": "^2.0.2",
+    "gulp-svgmin": "^1.2.3",
     "gulp-uglify": "^2.0.0",
     "mongoose": "^4.3.5",
     "nodemon": "^1.11.0",

@@ -9,6 +9,8 @@ const runSequence = require('run-sequence')
 const uglify = require('gulp-uglify')
 const babel = require('gulp-babel')
 const cleanCSS = require('gulp-clean-css')
+const svgSprite = require('gulp-svg-symbols')
+const svgmin = require('gulp-svgmin')
 
 gulp.task('clean', () => {
   return gulp.src(env.public.build.path).pipe(clean())
@@ -30,8 +32,16 @@ gulp.task('css', () => {
 })
 
 gulp.task('imgs', () => {
-  return gulp.src(env.public.build.imgs.src + '/**/*')
+  return gulp.src([env.public.build.imgs.src + '/**/*', '!' + env.public.build.icons.src + '/*.svg'])
+    .pipe(gulpif(/[.]svg$/, svgmin()))
     .pipe(gulp.dest(env.public.build.imgs.target))
+})
+
+gulp.task('icons', function () {
+  return gulp.src(env.public.build.icons.src + '/*.svg')
+        .pipe(svgmin())
+        .pipe(svgSprite())
+        .pipe(gulpif(/[.]svg$/, gulp.dest(env.public.build.icons.target)))
 })
 
 gulp.task('fonts', () => {
@@ -52,5 +62,5 @@ gulp.task('vendor:css', () => {
 })
 
 gulp.task('build', cb => {
-  return runSequence('clean', ['js', 'css', 'imgs', 'fonts', 'vendor:js', 'vendor:css'], cb)
+  return runSequence('clean', ['js', 'css', 'imgs', 'icons', 'fonts', 'vendor:js', 'vendor:css'], cb)
 })
