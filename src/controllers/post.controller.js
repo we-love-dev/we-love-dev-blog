@@ -16,6 +16,7 @@ ctrl.renderPostPage = (req, res) => {
     let _tag = results[0]
     let _options = {
       layout: 'template',
+      path: req.params.path,
       closeMenu: true,
       hasCode: true,
       title: _post.title,
