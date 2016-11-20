@@ -11,6 +11,7 @@ RUN yum clean all
 RUN npm install npm -g
 RUN npm install -g n
 RUN n lts
+RUN npm install gulp -g 
 RUN npm install pm2@latest -g
 
 ADD run.sh /run.sh
