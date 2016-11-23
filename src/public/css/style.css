@@ -124,24 +124,24 @@ table {
 
 @font-face {
 	font-family: 'merriweather-light';
-	src: url('/public/font/merriweather-light.woff') format('woff'),
-		 url('/public/font/merriweather-light.woff2') format('woff2');
+	src: url('/public/font/merriweather-light.woff2') format('woff2'),
+		 url('/public/font/merriweather-light.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'merriweather-bold';
-	src: url('/public/font/merriweather-bold.woff') format('woff'),
-		 url('/public/font/merriweather-bold.woff2') format('woff2');
+	src: url('/public/font/merriweather-bold.woff2') format('woff2'),
+		 url('/public/font/merriweather-bold.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'opensans-bold';
-	src: url('/public/font/opensans-bold.woff') format('woff'),
-		 url('/public/font/opensans-bold.woff2') format('woff2');
+	src: url('/public/font/opensans-bold.woff2') format('woff2'),
+		 url('/public/font/opensans-bold.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
